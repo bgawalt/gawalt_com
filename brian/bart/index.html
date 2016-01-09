@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=660px">
+<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oxygen:b' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oxygen:i' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<style>
+body { font-family: 'Oxygen', sans-serif;
+	font-size:15px;
+	background-color: rgb(255, 220, 220);
+	width: 620px;}
+
+textBuffer{
+	float: left;
+	clear: left;
+	width: 620px;
+	background-color: rgb(255,245,245);
+	margin-left:10px;
+}
+
+text{
+	float: left;
+	clear: left;
+	width: 590px;
+	background-color: rgb(255, 245, 245);
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+imageBox{
+	float:right;
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-right: 1px;
+	margin-bottom: 30px;
+}
+</style>
+
+<title>BART Fares and the Triangle Inequality</title>
+</head>
+
+<body>
+<H1>BART Fares and the Triangle Inequality</H1>
+
+<textBuffer><text>
+<imageBox><img src="bartmap.gif" align=right height=300 width=300></ibox>
+The <a href="http://bart.gov">Bay Area Rapid Transit</a> system is one of my favorite aspects of livin' round here. Pretty reliable, pretty quick, pretty good coverage of the area, <i>and</i> keeps me from having to drive places (which I am bad at). BART's kinda pricey, though.<br>
+<br>
+Sometimes it's so pricey it's cheaper to take BART twice than to take it once.<br>
+<br>
+Consider the following policy:<br>
+<br>
+<i>&#8220;The fare to travel from Station A to Station B should be less than the sum of [the fare from Station A to any Station C] plus [the fare from Station C to B].&#8221;</i><br>
+<br>
+This policy asks that the fare scheme for the BART network obey a <a href="http://en.wikipedia.org/wiki/Triangle_inequality">triangle inequality</a>. Wherever this policy is ignored, there's a situation where a passenger could save money by avoiding the direct route -- enter the system at Station A, leave the system but immediately re-enter at Station C,<br> <i>then</i> arrive at Station B, all for cheaper than if the passenger had stayed on the original train. A fare system that can be gamed this way is kinda inconsistent.<br>
+<br>
+If we grab the fare table (generously and usefully transcribed to the internet by the folks at <a href="http://www.transitunlimited.org/BART_fares">Transit Unlimited</a>), we can write <a href="bartCheat_py.txt">a Python script</a> to look for station-to-station direct routes that are less costly by exiting and re-entering at some intermediate point.<br>
+<br>
+The triangle inequality is broken for the following nine routes:<br>
+<br>
+
+<table border="1" width="590" cellpadding="5">
+<tr>
+<th width="200">Instead of taking...</th>
+<th width="300">take...</th>
+<th width="90">saving...</th>
+</tr>
+
+<tr>
+<td>MacArthur to Concord ($3.65)</td>
+<td>MacArthur to Orinda ($1.75),<br> <i>then</i><br>
+Orinda to Concord ($1.75)</td>
+<td>$0.15 (4.1%)</td>
+</tr>
+
+<tr>
+<td>Coliseum/OAK to Fremont ($3.60)</td>
+<td>Coliseum/OAK to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to Fremont ($1.75)</td>
+<td>$0.10 (2.8%)</td>
+</tr>
+
+<tr>
+<td>Coliseum/OAK to Dublin/Pleasanton ($3.60)</td>
+<td>Coliseum/OAK to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to Dublin/Pleas. ($1.75)</td>
+<td>$0.10 (2.8%)</td>
+</tr>
+
+<tr>
+<td>South Hayward to Dublin/Pleasanton ($3.65)</td>
+<td>South Hayward to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to Dublin/Pleas. ($1.75)</td>
+<td>$0.15 (4.1%)</td>
+</tr>
+
+
+<tr>
+<td>Union City to West Dublin/Pleasanton ($3.90)</td>
+<td>Union City to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to West Dublin/Pleas. ($1.75)</td>
+<td>$0.40 (10.2%)</td>
+</tr>
+
+
+<tr>
+<td>Union City to Dublin/Pleasanton ($4.05)</td>
+<td>Union City to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to Dublin/Pleas. ($1.75)</td>
+<td>$0.55 (13.6%)</td>
+</tr>
+
+
+<tr>
+<td>Fremont to West Dublin/Pleasanton ($4.20)</td>
+<td>Fremont to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to West Dublin/Pleas. ($1.75)</td>
+<td>$0.70 (16.7%)</td>
+</tr>
+
+
+<tr>
+<td>Fremont to Dublin/Pleasanton ($4.35)</td>
+<td>Fremont to Bay Fair ($1.75),<br> <i>then</i><br>
+Bay Fair to Dublin/Pleas. ($1.75)</td>
+<td>$0.85 (19.5%)</td>
+
+<tr>
+<td>Pittsburgh/Bay Point to Orinda ($3.65)</td>
+<td>Pitts./Bay Point to Concord ($1.75),<br> <i>then</i><br>
+Concord to Orinda ($1.75)<br>
+<br><i>OR</i><BR><br>Pitts./Bay Point to Pleasant Hill ($1.75),<br> <i>then</i><br>
+Pleasant Hill to Orinda ($1.75)<br>
+<br><i>OR</i><BR><br>Pitts./Bay Point to Walnut Creek ($1.75),<br> <i>then</i><br>
+Walnut Creek to Orinda ($1.75)</td>
+<td>$0.15 (4.1%)</td>
+</tr>
+</table>
+
+<br>
+Fun fact: all these loopholes involve strictly East Bay routes.<br>
+<br>
+The total charge for any of these alternative routes is $1.75 + $1.75 = $3.50. ($1.75 is the cheapest fare charge for any station-to-station route.) Note that BART fares are symmetric; the cost of riding from Station A to Station B is equal to the cost of riding from Station B to Station A. These savings apply regardless of which direction you travel.<br>
+<br>
+Of course, in order to actually witness these savings, you'd have to jump off your train, dash up to the turnstiles, swipe out of the BART system, turn around, and swipe back in, only to in all likelihood find that the train you started on is now chugging off to your final destination. So it's probably important to recognize the 15 cents you save by jumping out costs about 15 to 20 minutes of your life waiting for the next train to come pick you up.
+<br><br><br>
+Happy trails,<br><br>
+Brian Gawalt<br>
+<a href="mailto:bgawalt@gmail.com">bgawalt@gmail.com</a><br>
+June 1, 2011<br>
+<a href="http://gawalt.com/brian/">http://gawalt.com/brian/</a><br>
+<a href="http://www.twitter.com/bgawalt">http://www.twitter.com/bgawalt/</a><br><br>
+<br>&nbsp;
+_________________
+<br><br>
+<b>Addendum:</b><br>
+A lot of rail systems, like New York's subway, Chicago's el, Boston's T, and (<i>*cough*</i>) San Francisco's MUNI, elide this concern and charge the same fare regardless of where someone enters or exits the system. In fact, I can only think of DC's Metro as another large system that could potentially have triangle-inequality fare loopholes. Unfortunately, I can't find a convenient tabular dataset containing all station-to-station fares; you have to make specific requests to see the fares on each <a href="http://www.wmata.com/rail/stations.cfm">station page</a>. If anyone can get me the fare matrix, though, I'd love to rerun the analysis on their larger system to see if these &#8220;short cuts&#8221; exist on the east coast, too!
+<br><br>
+<br><br>&nbsp;
+</text></textBuffer>
+</body>
+</html>

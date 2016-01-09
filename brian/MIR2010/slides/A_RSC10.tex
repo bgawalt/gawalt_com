@@ -1,0 +1,940 @@
+% Revision history
+%
+%
+% Martin Wainwright (MJW)
+%
+%\documentclass[10pt,letterpaper]{seminar}
+\documentclass[10pt,slidestop,fxcolor=pst,dvips]{beamer}
+%\documentclass{beamer}
+%\usepackage{pstricks}
+%\usepackage[usenames]{color}
+
+%\usepackage{beamerthemesplit}
+%\usepackage{amsfonts} 
+%\usepackage{rotating}
+%\usepackage{amsmath,amssymb,amsthm}
+%\usepackage{fancyheadings}
+%\usepackage{epic}
+%\usepackage{eepic}
+%\usepackage[dvips]{color}
+%\input{colordvi}
+\usepackage{psfrag}
+\usepackage{amssymb, amsmath, amsthm}
+
+%%%%%% COLORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{navyblue}{rgb}{0,0,0.5}
+\definecolor{Navy}{rgb}{0,0,0.5}
+\definecolor{DarkPurple}{rgb}{0.7,0,0.7}
+%\definecolor{OliveGreen}{rgb}{0.1,0.7,0.1}
+\definecolor{OliveGreen}{cmyk}{0.91,0,0.88,0.2} % PANTONE 349
+%:commands section
+\newcommand{\OliveGreen}[1]{\color{OliveGreen}{#1}}
+\newcommand{\bOliveGreen}[1]{\color{OliveGreen}{{\bf{#1}}}}
+\newcommand{\bPurple}[1]{\color{DarkPurple}{{\bf{#1}}}}
+\newcommand{\OG}[1]{\bOliveGreen{#1}}
+\newcommand{\OR}[1]{\bPurple{#1}}
+\newcommand{\bRed}[1]{\color{red}{{\bf{#1}}}}
+\newcommand{\bBlue}[1]{\color{blue}{{\bf{#1}}}}
+
+\newcommand{\Red}[1]{\color{red}{#1}}
+\newcommand{\Blue}[1]{\color{blue}{#1}}
+\newcommand{\Purple}[1]{\color{DarkPurple}{#1}}
+\newcommand{\Navy}[1]{\color{Navy}{#1}}
+%\pagestyle{empty}
+%\pagestyle{plain}
+
+%\bibliographystyle{plain}
+
+\mode<presentation>
+{
+  	\usefonttheme[stillsansseriflarge]{serif}
+	\usefonttheme[onlylarge]{structurebold}
+  	\useoutertheme[subsection=false]{miniframes}
+	\useinnertheme{circles}
+        \usecolortheme[named=Navy]{structure}
+%	\setbeamercolor{structure}{fg=black, bg=white}
+	\setbeamertemplate{navigation symbols}{}
+}
+%\usepackage{lmodern}
+
+%\usepackage{textcomp,pifont}
+%\usepackage{times}
+
+
+\setbeamertemplate{frametitle}{
+\begin{centering}
+\insertframetitle
+\par
+\end{centering}
+} 
+
+
+
+%
+%\usetheme{Warsaw}     % Blue--> black title bars, smaller font
+%\usetheme{Frankfurt} % Blue title bars, larger font than Warsaw
+%\usetheme{Szeged}    % should be simple
+%\usetheme{Singapore}  % Not bad
+%\usetheme{Rochester}  % no menus at top
+%\usetheme{Pittsburgh}
+%\usetheme{Berlin}   % too much header/footer stuff
+%\usetheme{Antibes}
+%\usetheme{Bergen} % very large side margins
+\usetheme{Boadilla} % nice and simple
+%\usetheme{boxes}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Dresden}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}  % SUPER Simple
+%\usetheme{PaloAlto}
+
+%\input{fol.sty}
+%You can also pick a color theme in addition to theme above.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{rose}
+
+
+%\usefonttheme[onlylarge]{structuresmallcapsserif}
+
+
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+
+
+
+\newcommand{\tinavy}[1]{
+  \begin{center}
+    \large\bf
+  %{\Black{#1}}
+{\textcolor{navyblue}{#1}}
+  \end{center}
+  \vspace{1ex minus 1ex}}
+
+\newcommand{\mynavy}[1]{\textcolor{navyblue}{#1}}
+\definecolor{mypurple}{rgb}{0.5,0,.5}
+\newcommand{\mypurple}[1]{\textcolor{mypurple}{#1}}
+
+
+
+\newcommand{\ti}[1]{
+  \begin{center}
+    \large\bf
+  {\Black{#1}}
+%{\textcolor{navyblue}{#1}}
+  \end{center}
+  \vspace{1ex minus 1ex}}
+
+
+\newcommand{\tiblue}[1]{
+  \begin{center}
+    \large\bf
+  {\Blue{#1}}
+  \end{center}
+  \vspace{1ex minus 1ex}}
+
+
+
+\newcommand{\texdir}{.}
+%\newcommand{\texdir}{/home/mjwain/tex}
+%\newcommand{\texdir}{/home/eecs/wainwrig/tex}
+
+% Standard set of commands
+%\input{\texdir/DirectoryInfo}
+\input{\texdir/RatbertMacros}
+\input{\texdir/AMS_commands}
+\newcommand{\myfigdir}{.}
+
+
+%\usepackage{proposition}
+\newtheorem{proposition}{Proposition}
+
+\newcommand{\ctsx}{\ensuremath{\wtil{\xvec}}}
+\newcommand{\diffEnt}{\ensuremath{h}}
+\newcommand{\eye}{\ensuremath{I}}
+\newcommand{\spd}{\ensuremath{\operatorname{SPD}}}
+\newcommand{\Dom}{\ensuremath{\mathcal{D}}}
+%\newcommand{\Mat}{\ensuremath{M}}
+\newcommand{\Mattil}{\ensuremath{\wtil{\Mat}}}
+\newcommand{\Emat}{\ensuremath{E}}
+\newcommand{\realext}{\ensuremath{\real_*}}
+
+\newcommand{\outbound}{\ensuremath{\operatorname{OUT}}}
+%\newcommand{\Semidef}{\ensuremath{\operatorname{SDEF}}}
+\newcommand{\invtemp}{\ensuremath{\beta}}
+\newcommand{\temp}{\ensuremath{t}}
+
+\newcommand{\Parttil}{\ensuremath{\wtil{\Part}}}
+\newcommand{\Dualtil}{\ensuremath{\wtil{\Dual}}}
+
+\newcommand{\Cormat}{\ensuremath{R}}
+\newcommand{\Covmat}{\ensuremath{C}}
+
+\newcommand{\corr}{\ensuremath{\operatorname{cor}}}
+
+%\newcommand{\spnodenum}{\ensuremath{n}}
+\newcommand{\spobsnum}{\ensuremath{N}}
+
+\newcommand{\myhalf}{\ensuremath{\frac{1}{2}}}
+\newcommand{\ctsy}{\ensuremath{\wtil{\yvec}}}
+
+\newcommand{\blkdiag}{\ensuremath{\operatorname{blkdiag}}}
+
+\newcommand{\statespns}{\ensuremath{\statesp^\spnodenum}}
+
+\newcommand{\bpshort}{\ensuremath{\operatorname{BP}}}
+\newcommand{\bpshorts}{\ensuremath{\operatorname{BP}\; }}
+\newcommand{\sdpshort}{\ensuremath{\operatorname{SDP}}}
+\newcommand{\sdpshorts}{\ensuremath{\operatorname{SDP}\; }}
+
+
+
+\newcommand{\stateset}{\ensuremath{\scr{Z}}}
+\newcommand{\exafunm}{\ensuremath{\wtil{\exafun}}}
+\newcommand{\treegfunm}{\ensuremath{\wtil{\treefunm}}}
+
+
+\newcommand{\dualvarb}{\ensuremath{\boldsymbol{\dualvar}}}
+\newcommand{\eparamapp}{\ensuremath{\eparam^{APP}}}
+
+%\newcommand{\epi}{\ensuremath{\operatorname{epi}}}
+
+\newcommand{\cnei}{\ensuremath{\mathcal{N}}}
+
+\newcommand{\vpar}{\ensuremath{\nu}}
+
+
+%%%
+
+
+\newcommand{\trchap}{\ensuremath{\tau}}
+\newcommand{\Pcon}{\ensuremath{\mathcal{N}}}
+\newcommand{\Con}{\ensuremath{\mathcal{C}}}
+
+
+\newcommand{\impa}{\ensuremath{(\star)}}
+\newcommand{\impb}{\ensuremath{(\dagger)}}
+\newcommand{\limpar}{\ensuremath{\beta}}
+
+\newcommand{\Domtheta}{\ensuremath{\Theta}}
+
+\newcommand{\Code}{\ensuremath{\operatorname{CODE}}}
+
+
+\newcommand{\Partall}{\ensuremath{\Partc}}
+\newcommand{\Dualall}{\ensuremath{\Partc^*}}
+
+\newcommand{\Dualallbethe}{\ensuremath{H_{Bethe}}}
+	
+\newcommand{\Mdomtract}{\ensuremath{\Mdom_{tr}}}
+\newcommand{\Mdomgauss}{\ensuremath{\Mdom_{Gauss}}}
+
+\newcommand{\Lmat}{\ensuremath{Z}}
+\newcommand{\ellmat}{\ensuremath{z}}
+\newcommand{\Wmat}{\ensuremath{W}}
+\newcommand{\Umat}{\ensuremath{U}}
+
+\newcommand{\yvar}{\ensuremath{y}}
+\newcommand{\xvar}{\ensuremath{x}}
+\newcommand{\gvar}{\ensuremath{u}}
+\newcommand{\nvar}{\ensuremath{\eta}}
+\newcommand{\multvar}{\ensuremath{z}}
+
+\newcommand{\Ncone}{\ensuremath{N}}
+\newcommand{\Qpoly}{\ensuremath{\mathcal{Q}}}
+
+\newcommand{\mysub}{\ensuremath{S}}
+\newcommand{\code}{\ensuremath{C}}
+
+\newcommand{\Codepoly}{\ensuremath{\mathcal{\Mdom}}}
+
+\newcommand{\mynbr}{\ensuremath{\mathcal{N}}}
+
+\newcommand{\sensnum}{\ensuremath{S}}
+\newcommand{\Qrule}{\ensuremath{Q}}
+
+%\newcommand{\Xvec}{\mathbf{X}}
+
+\newcommand{\Margpoly}{\ensuremath{\operatorname{MARG}}}
+
+\newcommand{\xvecast}{\ensuremath{\xvec^\ast}}
+\newcommand{\xast}{\ensuremath{x^\ast}}
+
+
+\newcommand{\Mess}{\ensuremath{M}}
+\newcommand{\Messfix}{\ensuremath{\Mess^*}}
+
+
+\newcommand{\myset}[2]{\ensuremath{\{#1 \, \mid \, #2 \}}}
+
+\newcommand{\graphdia}{\ensuremath{\graph_{\operatorname{dia}}}}
+
+%%%%%%%% NEW COMMANDS FOR L1 RECOVERY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% support of a particular node
+\newcommand{\Nset}{\ensuremath{S}}
+% Complement
+\newcommand{\Nsetcomp}{{\ensuremath{{\Nset^{c}}}}}
+
+% RV version of z vector
+\newcommand{\capZ}{\ensuremath{Z}}
+
+% Assumption labels
+\newcommand{\assdep}{A1}
+\newcommand{\assinc}{A2}
+\newcommand{\assgro}{A3}
+
+% Assumptions with spaces
+\newcommand{\assdeps}{\ensuremath{$\operatorname{A1}\;$}}
+\newcommand{\assincs}{\ensuremath{$\operatorname{A2}\;$}}
+\newcommand{\assgros}{\ensuremath{$\operatorname{A3}\;$}}
+
+% Empirical version of \Qstar
+\newcommand{\Qemp}{\ensuremath{Q^\numobs}}
+
+\def\N{\mathcal{N}}
+
+\newcommand{\nodedeg}{\ensuremath{d}}
+\newcommand{\hackfactor}{\ensuremath{6}}
+
+%%%%%%%%%%%%%%%%%%
+
+\newcommand{\myeig}{\ensuremath{\lambda}}
+\newcommand{\myeigmin}{\ensuremath{\lambda_{min}}}
+\newcommand{\myeigmax}{\ensuremath{\lambda_{max}}}
+\newcommand{\Qstar}{\ensuremath{\Qmat^{*}}}
+%\newcommand{\degmax}{\ensuremath{\nodedeg_{\operatorname{max}}}}
+\newcommand{\degmax}{\ensuremath{\nodedeg}}
+
+\newcommand{\pvar}{\ensuremath{x}}
+\newcommand{\epvar}{\ensuremath{\estim{\pvar}}}
+\newcommand{\dvar}{\ensuremath{y}}
+\newcommand{\mpar}{\ensuremath{z}}
+\newcommand{\Mpar}{\ensuremath{Z}}
+\newcommand{\Wvar}{\ensuremath{W}}
+\newcommand{\pvars}{\ensuremath{\pvar^*}}
+\newcommand{\dvars}{\ensuremath{\dualvar^*}}
+\newcommand{\mpars}{\ensuremath{\mpar^*}}
+\newcommand{\fdual}{\ensuremath{\fprim^*}}
+\newcommand{\fprim}{\ensuremath{f}}
+\newcommand{\Qmat}{\ensuremath{Q}}
+%\newcommand{\Sset}{\ensuremath{S}}
+
+\newcommand{\Sset}{\ensuremath{S}}
+
+\newcommand{\Tset}{\ensuremath{T}}
+
+\newcommand{\Amat}{\ensuremath{X}}
+\newcommand{\Amatbf}{\ensuremath{\mathbf{\Amat}}}
+\newcommand{\Amatt}[1]{\ensuremath{\Amat_{#1}}}
+\newcommand{\arow}{\ensuremath{\vec{x}}}
+\newcommand{\acol}{\ensuremath{X}}
+
+\newcommand{\n}{\ensuremath{\numobs}}
+\newcommand{\m}{\ensuremath{\mdim}}
+
+%\newcommand{\betastar}{\ensuremath{\vec{\beta}^*}}
+\newcommand{\betastar}{\ensuremath{\beta^*}}
+
+\newcommand{\betasca}{\ensuremath{\vec{\beta}}}
+\newcommand{\betahat}{\ensuremath{\widehat{\beta}}}
+
+\newcommand{\ystar}{\ensuremath{\ysca^*}}
+\newcommand{\esca}{\ensuremath{w}}
+\newcommand{\Esca}{\ensuremath{W}}
+
+\newcommand{\SolSet}{\ensuremath{\mathcal{S}}}
+
+
+\newcommand{\Sbar}{\ensuremath{{\Ssetcomp}}}
+%\newcommand{\Ssetcomp}{\ensuremath{\Sbar}}
+\newcommand{\Ssetcomp}{\ensuremath{\Sset^c}}
+
+\newcommand{\sgn}{\ensuremath{\operatorname{sgn}}}
+\newcommand{\rank}{\ensuremath{\operatorname{rank}}}
+
+\newcommand{\Prop}{\ensuremath{\mathcal{R}}}
+
+\newcommand{\myone}{\ensuremath{\vec{1}}}
+
+\newcommand{\vstar}{\ensuremath{v^*}}
+
+
+\newcommand{\Zmin}{\ensuremath{\underbar{Z}_{(\bigN)}}}
+\newcommand{\Zmax}{\ensuremath{\overline{Z}_{(\bigN)}}}
+
+\newcommand{\Xmin}{\ensuremath{\underbar{X}_{(\bigN)}}}
+\newcommand{\Xmax}{\ensuremath{\overline{X}_{(\bigN)}}}
+
+\newcommand{\Vmin}{\ensuremath{\underbar{V}_{(\bigN)}}}
+\newcommand{\Vmax}{\ensuremath{\overline{V}_{(\bigN)}}}
+
+%\newcommand{\dim}{\ensuremath{\operatorname{dim}}}
+%\newcommand{\ker}{\ensuremath{\operatorname{ker}}}
+\newcommand{\range}{\ensuremath{\operatorname{range}}}
+
+
+\newcommand{\signoise}{\ensuremath{\sigma^2_n}}
+\newcommand{\signoisefour}{\ensuremath{\sigma^4_n}}
+
+
+\newcommand{\subgrad}{\ensuremath{z}}
+\newcommand{\subgradopt}{\ensuremath{\estim{\subgrad}}}
+
+\newcommand{\svec}{\ensuremath{\spec}}
+
+\newcommand{\sigw}{\ensuremath{\sigma^2}}
+\newcommand{\sigwfour}{\ensuremath{\sigma^4}}
+
+\newcommand{\Uvar}{\ensuremath{U}}
+\newcommand{\Vvar}{\ensuremath{V}}
+\newcommand{\Vvarcond}{\ensuremath{\wtil{\Vvar}}}
+
+\newcommand{\Zvar}{\ensuremath{Z}}
+\newcommand{\Zvarcond}{\ensuremath{\wtil{\Zvar}}}
+
+%\newcommand{\spec}{\ensuremath{\vec{b}\,}}
+\newcommand{\spec}{\ensuremath{\operatorname{sgn}(\betastar_S)}}
+
+
+\newcommand{\myVar}{\ensuremath{M_\numobs}}
+\newcommand{\myVarr}{\ensuremath{H}}
+\newcommand{\myTemp}{\ensuremath{T}}
+
+
+\newcommand{\evA}{\ensuremath{\mathcal{M}(\Vvar)}}
+\newcommand{\evB}{\ensuremath{\mathcal{M}(\Uvar)}}
+
+%\newcommand{\wtil}[1]{\ensuremath{\widetilde{#1}}}
+
+\newcommand{\Cmin}{\ensuremath{C_{min}}}
+\newcommand{\Cmax}{\ensuremath{C_{max}}}
+
+\newcommand{\CovMat}{\ensuremath{\Sigma}}
+\newcommand{\CovMatSqrt}{\ensuremath{\Sigma^{\frac{1}{2}}}}
+\newcommand{\CondMat}{\ensuremath{\CovMat_{(\Sbar  |  S)}}}
+
+\newcommand{\ThreshLow}{\ensuremath{\theta_{\ell}}}
+\newcommand{\ThreshUp}{\ensuremath{\theta_{u}}}
+
+\newcommand{\Tail}{\ensuremath{\mathcal{T}}}
+
+\newcommand{\Gnorm}{\ensuremath{Y}}
+
+\newcommand{\interdelta}{\ensuremath{\delta'}}
+\newcommand{\threshbou}{\ensuremath{\epsilon}}
+
+\newcommand{\numobs}{\ensuremath{n}}
+\newcommand{\spindex}{\ensuremath{s}}
+\newcommand{\mdim}{\ensuremath{p}}
+
+\newcommand{\bigN}{\ensuremath{N}}
+
+\newcommand{\Vtil}{\ensuremath{\wtil{\Vvar}}}
+\newcommand{\Vtilmax}{\ensuremath{\Vtil_{(\bigN)}}}
+
+\newcommand{\Uvartil}{\ensuremath{\wtil{\Uvar}}}
+
+\newcommand{\Znoise}{\ensuremath{Z}}
+
+\newcommand{\matbound}{\ensuremath{\nu}}
+\newcommand{\mutinc}{\matbound}
+
+\newcommand{\toep}{\ensuremath{\rho}}
+
+
+\newcommand{\myumean}{\ensuremath{Y}}
+\newcommand{\myumsca}{\ensuremath{y}}
+\newcommand{\myuvar}{\ensuremath{Y'}}
+\newcommand{\myuvsca}{\ensuremath{y'}}
+\newcommand{\mustar}{\ensuremath{\mu^*}}
+\newcommand{\Dconmax}{\ensuremath{D_{\operatorname{max}}}}
+\newcommand{\Dconmin}{\ensuremath{D_{\operatorname{min}}}}
+
+%\newcommand{\mdimcol}{\ensuremath{{\OliveGreen{\mdim}}}}
+%\newcommand{\spindexcol}{\ensuremath{{\Red{\spindex}}}}
+%\newcommand{\numobscol}{\ensuremath{{\Blue{\numobs}}}}
+
+\newcommand{\mdimcol}{\ensuremath{{{\mdim}}}}
+\newcommand{\spindexcol}{\ensuremath{{{\spindex}}}}
+\newcommand{\numobscol}{\ensuremath{{{\numobs}}}}
+
+\newcommand{\linprogone}{\ensuremath{LP_1}}
+\newcommand{\linprogzero}{\ensuremath{L_0}}
+\newcommand{\quadprogone}{\ensuremath{QP_1}}
+\newcommand{\quadprogzero}{\ensuremath{Q_0}}
+
+\newcommand{\Qpsol}{\ensuremath{\mathcal{Q}}}
+
+\newcommand{\Abf}{\ensuremath{\mathbf{A}}}
+\newcommand{\Bbf}{\ensuremath{\mathbf{B}}}
+
+
+\newcommand{\Uset}{\ensuremath{U}}
+
+\newcommand{\pdim}{\mdim}
+
+\newcommand{\MatInv}[1]{\ensuremath{\left[ #1^T #1 \right]^{-1}}}
+
+
+\newcommand{\Metric}{\ensuremath{\Delta}}
+\newcommand{\betavec}{\ensuremath{\vec{\beta}}}
+
+% Regularization parameter
+\newcommand{\regpar}{\ensuremath{\rho}}
+
+
+%\newcommand{\minval}{\ensuremath{{\myzvec^*_{\operatorname{min}}}}}
+%\newcommand{\minval}{\ensuremath{\beta_\star}}
+\newcommand{\minval}{\ensuremath{\beta_{min}}}
+\newcommand{\mydefn}{\ensuremath{: \, =}}
+
+\newcommand{\Numset}{\ensuremath{M}}
+
+\newcommand{\kdim}{\ensuremath{k}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newcommand{\thisfilefigdir}{\myfigdir}
+\newcommand{\tmpfigdir}{\myfigdir}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mysnr}{\ensuremath{\operatorname{SNR}}}
+\newcommand{\Sk}{\ensuremath{\mathbb{S}_\spindex}}
+
+
+\newcommand{\Projmat}[1]{\ensuremath{\Pi_{#1}}}
+\newcommand{\Projmatc}[1]{\ensuremath{\Pi^\perp_{#1}}}
+
+\newcommand{\Gfullmat}[1]{\ensuremath{#1 \MatInv{#1} #1^T}}
+
+\newcommand{\SbackU}{\ensuremath{S \backslash U}}
+\newcommand{\UbackS}{\ensuremath{U \backslash S }}
+
+\newcommand{\myarow}{\ensuremath{\vec{X}}}
+
+
+\newcommand{\PopCov}{\ensuremath{\Sigma}}
+\newcommand{\SamCov}{\ensuremath{\estim{\PopCov}}}
+
+%\newcommand{\myzvecc}{\ensuremath{\vec{\myzvec}}}
+\newcommand{\myzvecc}{\ensuremath{{\myzvec}}}
+\newcommand{\myzvec}{\ensuremath{\beta}}
+\newcommand{\emyzvec}{\ensuremath{\estim{\myzvec}}}
+\newcommand{\snr}{\ensuremath{\alpha}}
+
+%\newcommand{\regpar}{\ensuremath{\rho_\numobs}}
+%\newcommand{\Amat}{\ensuremath{Q}}
+
+\newcommand{\Specmat}[1]{\ensuremath{\Gamma_{#1}}}
+
+\newcommand{\dasp}{d'Aspr\'{e}mont$\, \,$}
+
+\newcommand{\Sdiag}{\ensuremath{D}}
+
+\newcommand{\Tcon}{\ensuremath{\tau^*}}
+
+\newcommand{\mprob}{\ensuremath{\mathbb{P}}}
+
+\newcommand{\thetadiag}{\ensuremath{\theta_{\operatorname{diag}}}}
+\newcommand{\thetainf}{\ensuremath{\theta_{\operatorname{\infty}}}}
+\newcommand{\thetainfo}{\ensuremath{\theta_{\operatorname{info}}}}
+\newcommand{\thetasdp}{\ensuremath{\theta_{\operatorname{sdp}}}}
+\newcommand{\thetacrit}{\ensuremath{\theta_{\operatorname{crit}}}}
+\newcommand{\thetalass}{\ensuremath{\theta_{\operatorname{Lasso}}}}
+
+
+
+\newcommand{\Zmat}{\ensuremath{Z}}
+\newcommand{\Zhat}{\ensuremath{\estim{\Zmat}}}
+%\newcommand{\Umat}{\ensuremath{U}}
+\newcommand{\Uhat}{\ensuremath{\estim{\Umat}}}
+\newcommand{\mytracer}[2]{\ensuremath{\trace\big(#1 \, #2 \big)}}
+
+\newcommand{\myzvechat}{\ensuremath{\estim{\myzvec}}}
+\newcommand{\myzvecstar}{\ensuremath{\myzvec^*}}
+
+\newcommand{\newtracer}[3]{\ensuremath{\langle \!\langle {#1}, \; {#2}
+\rangle \!\rangle_{#3}}}
+
+\newcommand{\Diffmat}[1]{\ensuremath{\Phi_{#1}}}
+\newcommand{\Delmat}[1]{\ensuremath{\Delta_{#1}}}
+\newcommand{\tvecstar}{\myzvecc}
+\newcommand{\newregpar}{\ensuremath{\regpar_\numobs}}
+
+\newcommand{\sis}{\Sset}
+\newcommand{\sisc}{\Ssetcomp}
+
+\newcommand{\eigvalub}{\gamma}  % eigenvalue of the upper block
+\newcommand{\meigvalub}{{\gamma^{*}}}
+\newcommand{\geigvec}{x}     % generic eigenvector
+\newcommand{\meigvec}[1]{\estim{\myzvec}^{#1}} % maximal eigenvector
+\newcommand{\meigvecn}[1]{\widetilde{\myzvec}^{#1}} % maximal eigenvector normalized
+
+\newcommand{\ellnet}{\ensuremath{\mathbb{N}}}
+\newcommand{\elltwomem}{\ensuremath{\gamma}}
+\newcommand{\ellonemem}{\ensuremath{\psi}}
+\newcommand{\vv}{\ensuremath{v}}
+
+\newcommand{\Xsam}[1]{\ensuremath{X^{(#1)}}}
+
+\newcommand{\Qtil}{\ensuremath{\widetilde{Q}}}
+
+\newcommand{\Dmax}{\ensuremath{D_{\operatorname{max}}}}
+
+\newcommand{\thetamin}{\ensuremath{\theta_\star}}
+
+\newcommand{\rdim}{\ensuremath{r}}
+%\newcommand{\pdim}{\ensuremath{p}}
+
+\newcommand{\qpar}{\ensuremath{q}}
+
+\newcommand{\thetasocp}{\ensuremath{\theta_{\operatorname{SOCP}}}}
+\newcommand{\thetadia}{\ensuremath{\theta_{\operatorname{thr}}}}
+
+\newcommand{\betamin}{\ensuremath{b_{\operatorname{min}}}}
+
+\newcommand{\bBstar}{\ensuremath{B^*}}
+
+\newcommand{\zfunc}{\ensuremath{Z}}
+\newcommand{\keyfunc}{\ensuremath{\Psi}}
+
+\newcommand{\Brow}{\ensuremath{B}}
+\newcommand{\bBnew}{\ensuremath{B}}
+
+\newcommand{\newBsrow}[1]{\ensuremath{B^*_{#1 \, \circ}}}
+\newcommand{\newBscol}[1]{\ensuremath{B^*_{\circ \, #1}}}
+
+\newcommand{\rtwo}{\ensuremath{\frac{1}{\sqrt{2}}}}
+\newcommand{\numreg}{\ensuremath{\rdim}}
+
+\newcommand{\specdim}{\ensuremath{m}}
+\newcommand{\Ured}{\ensuremath{{\Red{\U}}}}
+
+
+\newcommand{\Sigset}{\ensuremath{\mathbb{S}_\pm}}
+
+\newcommand{\GamMat}{\ensuremath{{\bf{\Gamma}}}}
+\newcommand{\LamMat}{\ensuremath{{\bf{\Lambda}}}}
+
+
+\newcommand{\X}{\ensuremath{\mathbf{X}}}
+\newcommand{\U}{\ensuremath{\mathbf{U}}}
+
+\newcommand{\npar}{\ensuremath{a}}
+
+\newcommand{\betawit}{\ensuremath{{{\widetilde{\beta}}}}}
+\newcommand{\zwit}{\ensuremath{\widetilde{z}}}
+
+
+\newcommand{\mstack}[2]{\color{white}{\underbrace{\color{black}{#1}}_{\color{black}{#2}}} \color{black}}
+\newcommand{\msolve}[4]{\ensuremath{{\OliveGreen{#1}} \, \in \, \arg \min_{#2} {\Blue{#3}} + \myregpar {\Red{#4}} } }
+
+\newcommand{\Reg}{\ensuremath{\Omega}}
+
+\newcommand{\thetalogreg}{\ensuremath{\theta_{\operatorname{LR}}}}
+
+\newcommand{\Gclass}{\ensuremath{\mathcal{G}}}
+
+\newcommand{\thetastar}{\ensuremath{\theta^\ast}}
+
+
+\newcommand{\Slass}{\ensuremath{\estim{S}_{\operatorname{Lasso}}}}
+\newcommand{\Ssocp}{\ensuremath{\estim{S}_{\operatorname{Block}}}}
+
+\newcommand{\Ball}{\ensuremath{\mathbb{B}}}
+%\newcommand{\qpar}{\ensuremath{q}}
+\newcommand{\rad}{\ensuremath{R_\qpar}}
+\newcommand{\radq}{\ensuremath{R^\qpar_\qpar}}
+
+\newcommand{\myzstar}{\ensuremath{z}}
+\newcommand{\menorm}[3]{\ensuremath{ \frac{{#1}_{#2 #3}}{\|{#1}_{#2
+\cdot}\|_2}}}
+
+\newcommand{\overlap}{\ensuremath{\alpha}}
+\newcommand{\delpar}{\ensuremath{\delta}}
+
+%\newcommand{\thetastar}{\ensuremath{\theta^\ast}}
+
+\newcommand{\Loss}{\ensuremath{\mathcal{L}}}
+\newcommand{\Data}{\ensuremath{\mathcal{X}_1^n}}
+\newcommand{\myregpar}{\ensuremath{\lambda_n}}
+\newcommand{\thetahat}{\ensuremath{\widehat{\theta}}}
+
+\newcommand{\Ipspace}{\ensuremath{\mathcal{H}}}
+\newcommand{\Subcollect}{\ensuremath{\mathcal{S}}}
+\newcommand{\subA}{A}
+\newcommand{\subB}{B}
+
+\newcommand{\lra}{k}
+\newcommand{\lrb}{m}
+\newcommand{\Vsub}{\ensuremath{\mathcal{V}}}
+
+\newcommand{\row}{\ensuremath{\operatorname{row}}}
+\newcommand{\col}{\ensuremath{\operatorname{col}}}
+
+\newcommand{\Rconset}{\ensuremath{\mathcal{C}}}
+\newcommand{\Scon}{\ensuremath{\gamma(\Loss)}}
+
+\newcommand{\ThetaStar}{\ensuremath{\Theta^\ast}}
+\newcommand{\ThetaHat}{\ensuremath{\widehat{\Theta}}}
+
+\newcommand{\mym}{\ensuremath{m}}
+
+\newcommand{\thetalog}{\ensuremath{\theta_{LR}}}
+
+\newcommand{\Edge}{E}
+\newcommand{\taured}{{\Red{\tau}}}
+\newcommand{\conone}{\ensuremath{c_1}}
+\newcommand{\contwo}{\ensuremath{c_2}}
+\newcommand{\conthree}{\ensuremath{c_3}}
+\newcommand{\confour}{\ensuremath{c_4}}
+\newcommand{\KconCov}{\ensuremath{K_{\CovMat^*}}}
+
+\newcommand{\KconHess}{\ensuremath{K_{\BigHess}}}
+\newcommand{\BigHess}{\ensuremath{\Gamma^*}}
+
+\newcommand{\plaincon}{c}
+
+\newcommand{\muhat}{\ensuremath{\widehat{\mu}}}
+
+\newcommand{\rxval}{x}
+
+\newcommand{\OrigA}{A}
+\newcommand{\OrigB}{B^\perp}
+\newcommand{\OrigBperp}{B}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% TITLE INFORMATION
+\date[March 30, 2010]
+
+
+  
+\title[Feature Selection and Word Association]{Discovering Word Associations in News Media \\via Feature Selection and Sparse Classification}
+
+ 
+\author{Brian Gawalt}
+
+ 
+\institute[UC Berkeley]{UC Berkeley \\ Departments of EECS \\
+
+\vspace*{0.5in}
+\begin{tabular}{ll} Based on joint work with:  
+& Jinzhu Jia (UC Berkeley) \\
+& Luke Miratrix (UC Berkeley) \\
+& Laurent El Ghaoui (UC Berkeley)\\
+& Bin Yu (UC Berkeley) \\
+& Sophie Clavier (SFSU) 
+\end{tabular}
+
+}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\frame[plain]{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Motivating Question}
+
+\vtiny
+\bit
+
+\item There exist techniques from machine learning capable of reliably
+classifying documents based on lexical content.  They are a promising resource
+for greater understanding of large document collections.
+
+\vsmall
+\item However, nearly all these lack an interpretable path from word
+use to document class:
+{\small{
+\bit 
+\item Classifier structure of some, e.g. decision trees, produce complicated,
+nested rules
+%
+\item Nearly all models consider ``too many'' words in the decision process -- 
+human interpretation requires sparsity of a classifier
+\eit}}
+
+
+\vsmall
+
+\item We ask:
+{\small{
+\bit
+\item \Blue{To what degree does human interpretability sacrifice classification capability?}
+\item \Red{Which (interpretable) models \& methods best aid human understanding of document corpora?}
+\eit
+}}
+
+
+\eit
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Case study: word image in the New York Times}
+\vtiny
+\bit
+
+\item For any query word $q$, we can split a corpus of document units into those containing $q$ and those not
+\vtiny
+\item We can then establish interpretable classifer models which provide a best guess as to whether a hypothetical document
+unit would or would not contain $q$ given its word use pattern.
+\vtiny
+\item We investigate feature selection processes which drop all but $k \approx 15$ words from inclusion prior to
+establishing such a  classification rule
+{\small{\bit
+\item Consider this list of $k$ words under feature selection process $P$ the {\Blue{image}} of $q$ under $P$
+\item Evaluate these images for (comparative) ability both to lead to good classifiers and ability to convey semantic meaning to a human reader
+\eit}
+}
+\vtiny
+\item Experiments conducted with a body of articles from the {\itshape{New York Times}} International section
+{\small{\bit
+\item Dates run contiguously from December 15, 2008 through October 18, 2009
+\item Articles broken into 109,686 paragraphs, each taken as a document unit
+\item 79,494 distinct word tokens
+\eit}}
+
+\eit
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Our approach: feature selection for logistic regression models}
+
+
+\vsmall
+
+\begin{tabular}{cc}
+\parbox{0.5\textwidth}{
+\widgraph{.5\textwidth}{\myfigdir/block_diagram.eps}
+}
+
+\parbox{.4 \textwidth}{
+\bit
+\item Independent variable: Feature selection process
+\item Dependent variables: Semantic/predictive performance
+\item Experiment is conducted repeatedly across many queries
+(adjusting the training/testing datasets for each) in order to
+broadly test the effects of the choice of feature selection
+process alone.
+\eit
+}
+%
+\end{tabular}
+
+\vtiny
+
+
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+\frametitle{Pre-processing}
+
+
+
+\bit
+\item White-space maintained while punctuation and numerals omitted
+\vtiny
+\item Characters reduced to lower case
+\vtiny
+\item Stop words omitted
+{\small \bit \item Words known {\it{a priori}} to be uninteresting
+\item E.g., {\texttt the},  {\texttt is},  {\texttt a},  {\texttt in}; majority prepositions and linking verbs \eit}
+\vtiny
+\item No stemming implemented
+{\small \bit \item {\texttt iraqis} denotes the citizens, as distinct from the more general { \texttt iraqi} \eit}
+\vtiny
+\item Bag-of-words vectorization
+{\small \bit
+\item Each document unit encoded as a vector with integral elements
+\item Each element of vector corresponds to one distinct (non-stop) word token found in the corpus
+\item Value of element corresponds to number of times token appears in unit (ergo, vectors are sparse)
+\eit}
+\vtiny
+\item For each experiment, choose one token as the classification label
+{\small \bit \item Positive example vectors have non-zero values as that token's element \eit}
+\eit
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Classifier Model: Logistic Regression}
+
+\bit \item {\Blue{Logistic regression model}}: The log-odds ratio of a document unit belonging to the positive class equals the inner product of the document's word count vector with the model parameters \eit
+\begin{equation}
+\label{LRlogodds}
+\log \frac{P(y_i = 1 ~|~ x_i, \beta)}{P(y_i = 0 ~|~ x_i, \beta)} = \log \frac{P(y_i = 1 ~|~ x_i, \beta)}{1 - P(y_i = 1 ~|~ x_i, \beta)} = \beta_0 + x_1\beta_1 + \ldots + x_n\beta_n
+\end{equation}
+\begin{equation}
+P(y_i ~|~ x_i, \beta) = \frac{1}{1+\exp(-y_i(\beta_0 + x^T\beta))}
+\end{equation}
+
+\bit \item We can assemble a log-likelihood for parameter set $\beta$ taking the log of the product of all above terms, $i = 1, \dots, m$: \eit
+
+\begin{equation}
+\label{LRloglike}
+{\cal{L}} (\beta) = \sum_{i=1}^m \log P(y_i ~|~ x_i, \beta) = -\sum_{i=1}^m \log \left(1+\exp(-y_i(\beta_0 + x^T\beta))\right)  
+\end{equation}
+
+\bit \item This can be maximized for $\beta$ efficiently ($O(m^3n^3)$ or better), and preserves a meaningful/interpretable pathway from each word token $j = 1, \ldots, n$ to positive class membership (i.e., mentioning the query term) \eit
+
+
+
+\end{frame}
+
+\end{document}

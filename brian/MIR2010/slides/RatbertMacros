@@ -1,0 +1,1437 @@
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WIDEBAR COMMAND
+\newlength{\widebarargwidth}
+\newlength{\widebarargheight}
+\newlength{\widebarargdepth}
+\DeclareRobustCommand{\widebar}[1]{%
+  \settowidth{\widebarargwidth}{\ensuremath{#1}}%
+  \settoheight{\widebarargheight}{\ensuremath{#1}}%
+  \settodepth{\widebarargdepth}{\ensuremath{#1}}%
+  \addtolength{\widebarargwidth}{-0.3\widebarargheight}%
+  \addtolength{\widebarargwidth}{-0.3\widebarargdepth}%
+  \makebox[0pt][l]{\hspace{0.3\widebarargheight}%
+    \hspace{0.3\widebarargdepth}%
+    \addtolength{\widebarargheight}{0.3ex}%
+    \rule[\widebarargheight]{0.95\widebarargwidth}{0.1ex}}%
+  {#1}}
+
+
+% NEW MJW VERSION
+\newcommand{\matnorm}[3]{|\!|\!| #1 | \! | \!|_{{#2}, {#3}}}
+\newcommand{\matsnorm}[2]{|\!|\!| #1 | \! | \!|_{{#2}}}
+\newcommand{\vecnorm}[2]{\| #1\|_{#2}}
+
+
+\newenvironment{carlist}
+ {\begin{list}{$\bullet$}
+ {\setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+  \setlength{\parsep}{0in} \setlength{\itemsep}{\parskip}
+  \setlength{\leftmargin}{0.07in} \setlength{\rightmargin}{0.08in}
+  \setlength{\listparindent}{0in} \setlength{\labelwidth}{0.08in}
+  \setlength{\labelsep}{0.1in} \setlength{\itemindent}{0in}}}
+ {\end{list}}
+
+\newcommand{\bcar}{\begin{carlist}}
+\newcommand{\ecar}{\end{carlist}}
+
+\newcommand{\vech}{\ensuremath{\operatorname{vech}}}
+
+\newcommand{\mytit}[1]{\begin{center} \subsection*{#1} \end{center}}
+
+\newcommand{\Prob}{\ensuremath{\mathbb{P}}}
+
+% June 8, 2003
+
+
+\newcommand{\Dualfun}{\ensuremath{\mathcal{Q}}}
+
+\newcommand{\tracer}[2]{\ensuremath{\langle \!\langle {#1}, \; {#2}
+\rangle \!\rangle}}
+
+\newcommand{\Symcone}[1]{\ensuremath{\mathcal{S}^{#1}}}
+
+% Vertex of polytope specified by configuration
+\newcommand{\pvert}[2]{\ensuremath{#1_{#2}}}
+
+% Base measure
+\newcommand{\nub}{\ensuremath{{\boldsymbol{\nu}}}}
+\newcommand{\Mdom}{\ensuremath{\mathcal{M}}}
+
+
+
+% March 27, 2003
+
+\newcommand{\mhalf}{\ensuremath{\frac{1}{2}}}
+\newcommand{\ext}{\ensuremath{\operatorname{ext}}}
+\newcommand{\co}{\ensuremath{\operatorname{co}}}
+
+
+\newcommand{\Genapp}{\ensuremath{C}}
+\newcommand{\Specapp}{\ensuremath{\Dualc_{app}}}
+\newcommand{\Partapp}{\ensuremath{B}}
+\newcommand{\Dualapp}{\ensuremath{\Partapp^*}}
+\newcommand{\Appset}{\ensuremath{APP}}
+
+% Basic command for clique
+\newcommand{\clset}{\ensuremath{C}}
+
+\newcommand{\aseta}{\ensuremath{A}}
+\newcommand{\bseta}{\ensuremath{B}}
+\newcommand{\cseta}{\ensuremath{C}}
+
+\newcommand{\epvec}{\ensuremath{{\boldsymbol{\eparam}}}}
+\newcommand{\epvecs}{\ensuremath{{\boldsymbol{\eparam}}^*}}
+
+\newcommand{\myproj}[2]{\ensuremath{{#1}({#2})}}
+
+\newcommand{\treedist}{\ensuremath{\rho}}
+\newcommand{\treedistvec}{\ensuremath{{\boldsymbol{\rho}}}}
+\newcommand{\trdistvec}{\ensuremath{{\boldsymbol{\rho_e}}}}
+
+\newcommand{\grmaxmarg}{\ensuremath{\nu}}
+\newcommand{\grmaxmargb}{\ensuremath{\nu}}
+
+\newcommand{\support}[2]{\ensuremath{\delta^*(#1 \, | \, #2)}}
+\newcommand{\indicate}[2]{\ensuremath{\delta(#1 \, | \, #2)}}
+
+\newcommand{\supportsolo}{\ensuremath{\delta^*}}
+\newcommand{\indicatesolo}{\ensuremath{\delta}}
+
+
+\newcommand{\xp}{\ensuremath{x}}
+\newcommand{\xd}{\ensuremath{x^*}}
+
+
+\newcommand{\yp}{\ensuremath{y}}
+\newcommand{\yd}{\ensuremath{y^*}}
+
+\newcommand{\func}{\ensuremath{f}}
+\newcommand{\funcdual}{\ensuremath{f^*}}
+
+
+
+
+
+\newcommand{\realn}{\ensuremath{\real^n}}
+\newcommand{\realnpos}{\ensuremath{\real_+^n}}
+\newcommand{\realnspos}{\ensuremath{\real_{++}^n}}
+
+
+\newcommand{\realpos}{\ensuremath{\real_+}}
+\newcommand{\realspos}{\ensuremath{\real_{++}}}
+
+\newcommand{\convset}{\ensuremath{C}}
+\newcommand{\aff}{\ensuremath{\operatorname{aff}}}
+
+\newcommand{\lama}{\ensuremath{\lambda}}
+\newcommand{\lamb}{\ensuremath{\mu}}
+
+
+\newcommand{\cone}{\ensuremath{K}}
+\newcommand{\dcone}{\ensuremath{K^*}}
+
+\newcommand{\xset}{\ensuremath{X}}
+
+\newcommand{\con}{\ensuremath{c}}
+
+\newcommand{\coneleq}{\ensuremath{\preceq_{\cone}}}
+\newcommand{\conele}{\ensuremath{\prec_{\cone}}}
+\newcommand{\conegeq}{\ensuremath{\succeq_{\cone}}}
+\newcommand{\conege}{\ensuremath{\succ_{\cone}}}
+
+\newcommand{\gauge}{\ensuremath{\gamma}}
+
+
+% Measure
+\newcommand{\meas}{\ensuremath{m}}
+\newcommand{\power}{\ensuremath{\mathcal{P}}}
+\newcommand{\measset}{\mathcal{M}}
+\newcommand{\algeb}{\mathcal{A}}
+\newcommand{\balgeb}{\mathcal{B}}
+\newcommand{\measfam}{\mathcal{F}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% March 10, 2003
+
+\newcommand{\op}[1]{\ensuremath{\operatorname{#1}}}
+
+\newcommand{\Semidef}{\ensuremath{\operatorname{SDEF}}}
+
+\newcommand{\Mat}{\ensuremath{M}}
+
+\newcommand{\spnodenum}{\ensuremath{n}}
+
+% Domain of function
+\newcommand{\dom}{\ensuremath{\operatorname{dom}}}
+
+% Moment mapping
+\newcommand{\Mommap}{\ensuremath{\Lambda}}
+
+
+\newcommand{\stsp}{\ensuremath{\statesp^{\spnodenum}}}
+
+
+\newcommand{\Locone}{\ensuremath{\operatorname{LOCAL}}}
+\newcommand{\Locset}{\ensuremath{\operatorname{LOCAL}}}
+
+\newcommand{\treegr}{\ensuremath{T}}
+
+
+\newcommand{\tausym}{\ensuremath{\tau}}
+\newcommand{\tausymb}{\ensuremath{\tau}}
+
+\newcommand{\specexp}{\ensuremath{\gamma^*}}
+\newcommand{\logmaxspec}{\ensuremath{\ell^*}}
+
+\newcommand{\mmax}{\operatorname{maximize}}
+\newcommand{\mmin}{\operatorname{minimize}}
+\newcommand{\subto}{\operatorname{subject} \; \operatorname{to}}
+
+\newcommand{\Partcapp}{\ensuremath{B}}
+\newcommand{\Dualcapp}{\ensuremath{\Partcapp^*}}
+
+\newcommand{\Partctil}{\ensuremath{\wtil{\Partc}}}
+\newcommand{\Dualctil}{\ensuremath{\wtil{\Partc}^*}}
+
+\newcommand{\meanpar}{\ensuremath{\mu}}
+\newcommand{\meanparb}{\ensuremath{\mu}}
+\newcommand{\meanpartil}{\ensuremath{\wtil{\meanpar}}}
+\newcommand{\meanparmf}{\ensuremath{\meanpar^{\operatorname{MF}}}}
+
+
+
+% New commands as of February 11, 2003
+
+% LP norms
+\newcommand{\lp}[2]{\ensuremath{\|#2\|_{#1}}}
+
+% Wedge and vee min and max
+\newcommand{\wmin}{\ensuremath{\wedge}}
+\newcommand{\vmax}{\ensuremath{\vee}}
+
+\newcommand{\Outer}{\ensuremath{\operatorname{OUT}}}
+\newcommand{\taupar}{\ensuremath{\tau}}
+
+
+
+%%% New version of \caption puts things in smaller type, single-spaced 
+%%% and indents them to set them off more from the text.
+\makeatletter
+\long\def\@makecaption#1#2{
+        \vskip 0.8ex
+        \setbox\@tempboxa\hbox{\small {\bf #1:} #2}
+        \parindent 1.5em  %% How can we use the global value of this???
+        \dimen0=\hsize
+        \advance\dimen0 by -3em
+        \ifdim \wd\@tempboxa >\dimen0
+                \hbox to \hsize{
+                        \parindent 0em
+                        \hfil 
+                        \parbox{\dimen0}{\def\baselinestretch{0.96}\small
+                                {\bf #1.} #2
+                                %%\unhbox\@tempboxa
+                                } 
+                        \hfil}
+        \else \hbox to \hsize{\hfil \box\@tempboxa \hfil}
+        \fi
+        }
+\makeatother
+
+
+
+\long\def\comment#1{}
+
+%% modify cite command to do \cite[e.g, ]{foo1,foo2} 
+\makeatletter
+\def\@cite#1#2{[\if@tempswa #2 \fi #1]}
+\makeatother
+
+
+\makeatletter
+\long\def\barenote#1{
+    \insert\footins{\footnotesize
+    \interlinepenalty\interfootnotelinepenalty 
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+    {\rule{\z@}{\footnotesep}\ignorespaces
+              % indent
+      #1\strut}}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BOOK CHAPTER
+
+
+\newcommand{\Tractmarg}{\ensuremath{\operatorname{TRACT}}}
+\newcommand{\Tractmargfact}{\ensuremath{\operatorname{FACT}}}
+\newcommand{\mysubmani}{\ensuremath{{\mathcal{M}}_e}}
+
+\newcommand{\subgraphfact}{\ensuremath{\subgraph_{0}}}
+
+
+\newcommand{\Partdual}{\ensuremath{\Part^*}}
+
+\newcommand{\Partc}{\ensuremath{A}}
+\newcommand{\Dualc}{\ensuremath{\Partc^*}}
+
+% Relative interior of a set
+\newcommand{\relint}{\ensuremath{\operatorname{ri}}}
+
+\newcommand{\interior}{\ensuremath{\operatorname{int}}}
+\newcommand{\intr}{\ensuremath{\operatorname{int}}}
+
+% Script I for indicator function
+\newcommand{\Ind}{\ensuremath{\mathbb{I\,}}}
+
+% Capitol \Mu for domain of mean parameter
+\newcommand{\Mu}{\ensuremath{\mathcal{M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Hmargset}{\ensuremath{\operatorname{HYPER}}}
+
+
+\newcommand{\bmatpos}{\ensuremath{\begin{bmatrix} 0.4 & 0.1 \\ 0.1 & 0.4 \end{bmatrix}}}
+
+
+\newcommand{\bmatneg}{\ensuremath{\begin{bmatrix} 0.1 & 0.4 \\ 0.4 & 0.1 \end{bmatrix}}}
+
+\newcommand{\bmatvec}{\ensuremath{\begin{bmatrix} 0.5 \\ 0.5 \end{bmatrix}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\newcommand{\Tempfun}{\ensuremath{{\mathcal{G}}}}
+
+% New command: domain of the dual function
+\newcommand{\dualdom}{\ensuremath{{\mathcal{D}}}}
+
+\newcommand{\eparambp}{\ensuremath{\eparam^{BP}}}
+\newcommand{\eparamml}{\ensuremath{\eparam^{ML}}}
+\newcommand{\eparamre}{\ensuremath{\eparam^{RE}}}
+
+% Number of observations
+\newcommand{\obsnum}{\ensuremath{n}}
+\newcommand{\girth}{\ensuremath{g}}
+\newcommand{\girfun}{\ensuremath{l}}
+
+
+\newcommand{\Loglike}{\ensuremath{L}}
+\newcommand{\Apploglike}{\ensuremath{\wtil{\Loglike}}}
+
+
+
+\newcommand{\cona}{\ensuremath{{\mathcal{C}_e}}}
+\newcommand{\conb}{\ensuremath{{\mathcal{C}_m}}}
+
+
+\newcommand{\modcom}{\ensuremath{\varphi}}
+\newcommand{\modmescom}{\ensuremath{\rho}}
+
+\newcommand{\const}{\ensuremath{C}}
+\newcommand{\eparamest}{\ensuremath{\estim{\eparam}}}
+\newcommand{\veparamest}{\ensuremath{\estim{\veparam}}}
+
+\newcommand{\Corset}{\ensuremath{\operatorname{COR}}}
+
+\newcommand{\trwmax}{tree-reweighted max-sum$\;$}
+\newcommand{\trwmaxs}{tree-reweighted max-sum}
+
+\newcommand{\trwmaxpr}{tree-reweighted max-product$\;$}
+\newcommand{\trwmaxprs}{tree-reweighted max-product}
+
+
+
+\newcommand{\examaxmarg}{\ensuremath{\wtil{\exafun}}}
+
+\newcommand{\trmaxmarg}{\ensuremath{T}}
+\newcommand{\trmaxmargb}{\ensuremath{\mathbf{\trmaxmarg}}}
+
+\newcommand{\newtmarg}{\ensuremath{Q}}
+\newcommand{\newtmargb}{\ensuremath{\mathbf{\newtmarg}}}
+
+\newcommand{\trmaxm}{\ensuremath{\trmaxmarg^*}}
+\newcommand{\trmaxmb}{\ensuremath{\trmaxmargb^*}}
+
+\newcommand{\Dualfunc}{\ensuremath{{\mathcal{H}}}}
+
+
+
+\newcommand{\Margset}{\ensuremath{\operatorname{MARG}}}
+\newcommand{\Tmargset}{\ensuremath{\operatorname{TREE}}}
+\newcommand{\infbit}{\ensuremath{v}}
+\newcommand{\outbit}{\ensuremath{u}}
+\newcommand{\infvec}{\ensuremath{\vvec}}
+\newcommand{\outvec}{\ensuremath{\uvec}}
+\newcommand{\cbit}{\ensuremath{C}}
+\newcommand{\cbitvec}{\ensuremath{\mathbf{\cbit}}}
+\newcommand{\cross}{\ensuremath{p}}
+
+
+\newcommand{\xoptset}{\ensuremath{\operatorname{OPT}}}
+
+
+\newcommand{\asfig}{0.1}
+\newcommand{\bsfig}{0.9}
+
+\newcommand{\csfig}{0.1}
+\newcommand{\dsfig}{0.9}
+
+\newcommand{\esfig}{0.4}
+\newcommand{\fsfig}{0.6}
+
+\newcommand{\eps}{\ensuremath{\epsilon}}
+
+
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+
+\newcommand{\bear}{\begin{eqnarray}}
+\newcommand{\eear}{\end{eqnarray}}
+
+\newcommand{\htiny}{\hspace*{.1in}}
+\newcommand{\vtiny}{\vspace*{.1in}}
+\newcommand{\vsmall}{\vspace*{.2in}}
+\newcommand{\hsmall}{\hspace*{.2in}}
+
+\newcommand{\fn}{\footnotesize}
+%\newcommand{\myspec}[2]{\ensuremath{\frac{\treefun_{#1 #2}}{\treefun_{#1} \, \treefun_{#2}}}}
+%\newcommand{\myspec}[2]{\ensuremath{\compat_{#1 #2}}}
+
+
+\newcommand{\myspec}[2]{\ensuremath{\frac{\treefun^*_{#1 #2}}{\treefun^*_{#1} \, \treefun^*_{#2}}}}
+\newcommand{\mysing}[1]{\ensuremath{\treefun^*_{#1}}}
+
+
+\newcommand{\myspectwo}[2]{\ensuremath{\compat_{#1 #2}}}
+
+
+%%%%%%%%%%%%%%%%%
+% Macros defined for this paper
+\newcommand{\xhatcovar}{\ensuremath{\estim{P}}}
+\newcommand{\bigB}{\ensuremath{{\bf{B}}}}
+\newcommand{\bigF}{\ensuremath{{\bf{F}}}}
+\newcommand{\alglong}{embedded trees }
+\newcommand{\algshortnips}{ET }
+\newcommand{\algshortnip}{ET}
+\newcommand{\len}{\ensuremath{l}}
+\newcommand{\lenx}{\ensuremath{L_\xvec}}
+\newcommand{\errorvec}{\ensuremath{\wtil{\evec}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\scaler}{\ensuremath{i}}
+\newcommand{\maxscaler}{\ensuremath{I}}
+\newcommand{\spinparam}{\ensuremath{\omega}}
+
+%%%%%%%%%%%%%%%%%%% COMMANDS FROM TRP PAPER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rterm}{\ensuremath{r}}
+
+\newcommand{\bpmapbold}{\ensuremath{{H}}}
+\newcommand{\bpmap}{\ensuremath{H}}
+\newcommand{\bfzero}{\ensuremath{\mathbf{0}}}
+\newcommand{\gaminit}{\ensuremath{\bar{\gamma}^0}}
+\newcommand{\nodevar}{\ensuremath{r}}
+\newcommand{\qform}{\ensuremath{A}} 
+\newcommand{\qformm}{\ensuremath{a}} 
+\newcommand{\pdf}{pdf$\;\,$}
+\newcommand{\mycompat}{compatibility function$\;$}
+\newcommand{\mycompats}{compatibility functions$\;$}
+%\newcommand{\setp}{\ensuremath{{{\mathcal{P}}}}}
+
+%\newcommand{\inject}{\ensuremath{\mathcal{I}}}
+%\newcommand{\estraint}{\ensuremath{\mathcal{D}}}
+
+\newcommand{\tiltpart}{\ensuremath{F}}
+\newcommand{\gammabar}{\ensuremath{\bar{\gamma}}}
+\newcommand{\sett}{\ensuremath{\mathcal{U}}}
+\newcommand{\etabar}{\ensuremath{\bar{\eta}}}
+\newcommand{\etabarbf}{\ensuremath{\mathbf{\bar{\eta}}}}
+%\newcommand{\Dualpart}{\ensuremath{\Psi}}
+
+\newcommand{\Hacmap}{\ensuremath{\underline{\Lambda}}}
+\newcommand{\underest}{\ensuremath{\underline{\estimate}}}
+
+% Delta function for node x_s = j
+\newcommand{\delf}{\ensuremath{\delta(x_s = j)}}
+\newcommand{\dellf}[2]{\ensuremath{\delta(x_{#1}={#2})}}
+
+
+\newcommand{\algsing}{reparameterization }
+\newcommand{\Algsing}{Reparameterization }
+
+
+\newcommand{\hackint}{\ensuremath{K}}
+
+
+
+
+%%%%
+
+
+\newcommand{\tilt}[2]{\ensuremath{{#1}_{#2}}}
+\newcommand{\Partpl}[1]{\ensuremath{\Part_{#1}}}
+
+\newcommand{\proofbox}{\begin{flushright} $\Box$ \end{flushright}}
+\newcommand{\sptreenum}{\ensuremath{\mathcal{S}}}
+\newcommand{\numcut}{\ensuremath{c}}
+
+\newcommand{\partnum}{\ensuremath{L}}
+
+\newcommand{\aind}{\ensuremath{a}}
+\newcommand{\bind}{\ensuremath{b}}
+\newcommand{\cind}{\ensuremath{c}}
+
+\newcommand{\uni}{\ensuremath{\mathcal{U}}}
+\newcommand{\edstrength}{\ensuremath{S}}
+
+\newcommand{\supp}{\ensuremath{\operatorname{supp}}}
+
+
+\newcommand{\evec}{\ensuremath{{\mathbf{e}}}}
+\newcommand{\tvec}{\ensuremath{{\mathbf{t}}}}
+\newcommand{\avec}{\ensuremath{{{\mathbf{a}}}}}
+\newcommand{\bvec}{\ensuremath{{{\mathbf{b}}}}}
+\newcommand{\cvec}{\ensuremath{{{\mathbf{c}}}}}
+\newcommand{\clipotvec}{\ensuremath{{\boldsymbol{\clipot}}}}
+\newcommand{\compatvec}{\ensuremath{{\boldsymbol{\compat}}}}
+
+\newcommand{\Tiltpart}{\ensuremath{\Part}}
+\newcommand{\simplex}{\ensuremath{\mathcal{P}}}
+
+\newcommand{\Info}{\ensuremath{I}}
+\newcommand{\Ent}{\ensuremath{H}}
+
+\newcommand{\upoptfun}{\ensuremath{\mathcal{F}}}
+\newcommand{\Mufun}{\ensuremath{\mathcal{H}}}
+\newcommand{\treepoly}{\ensuremath{\mathbb{T}}}
+\newcommand{\forestpoly}{\ensuremath{\mathbb{F}}}
+
+\newcommand{\treepolypos}{\ensuremath{\mathbb{T}_+}}
+\newcommand{\Mfun}{\ensuremath{\mathcal{L}}}
+\newcommand{\Finfun}{\ensuremath{\mathcal{F}}}
+
+\newcommand{\treewei}{\ensuremath{\mathbb{T}}}
+
+\newcommand{\treewidth}{\ensuremath{t}}
+
+\newcommand{\meanpoly}{\ensuremath{\mathbb{L}}}
+\newcommand{\truepoly}{\ensuremath{\mathbb{M}}}
+
+
+\newcommand{\maxset}{\ensuremath{\mathbb{M}}}
+\newcommand{\optset}{\ensuremath{\operatorname{OPT}}}
+\newcommand{\conv}{\ensuremath{\operatorname{conv}}}
+
+\newcommand{\Tfunc}{\ensuremath{F}}
+\newcommand{\Jfunc}{\ensuremath{J}}
+
+\newcommand{\edind}{\ensuremath{e}}
+
+\newcommand{\hypergraph}{\ensuremath{G_{\operatorname{HYP}}}}
+\newcommand{\hypergraphcal}{\ensuremath{\mathcal{H}}}
+\newcommand{\hyperedge}{\ensuremath{h}}
+\newcommand{\hyp}{\ensuremath{\edge}}
+\newcommand{\hypertree}{\ensuremath{\mathcal{T}}}
+\newcommand{\hyperedtwo}{\ensuremath{g}}
+\newcommand{\hyperedth}{\ensuremath{f}}
+
+\newcommand{\recur}{\ensuremath{\varphi}}
+
+
+\newcommand{\apdist}{\ensuremath{{\mathcal{T}}}}
+\newcommand{\tract}{\mathfrak{T}}
+\newcommand{\dweivec}{\ensuremath{{\boldsymbol{{\vec{\dwei}}}}}}
+%\newcommand{\dweivecfx}{\ensuremath{{\boldsymbol{\bar{\dwei}}}}}
+\newcommand{\dweivecfx}{\ensuremath{\dweivec}}
+
+
+\newcommand{\cpar}{\ensuremath{\beta}}
+
+\newcommand{\dwvec}{\ensuremath{\boldsymbol{\dwei_e}}}
+\newcommand{\dwvech}{\ensuremath{\boldsymbol{\dwei_\hyperedge}}}
+%\newcommand{\dwvecfx}{\ensuremath{\boldsymbol{{\bar{\dwei}_e}}}}
+\newcommand{\dwvecfx}{\ensuremath{\dwvec}}
+
+
+\newcommand{\spinc}{\ensuremath{\boldsymbol{\nu}}}
+\newcommand{\dualfun}{\ensuremath{{{\mathcal{Q}}}}}
+\newcommand{\lagmul}{\ensuremath{\lambda}}
+\newcommand{\lamvec}{\ensuremath{{\boldsymbol{\lambda}}}}
+\newcommand{\lagtwo}{\ensuremath{\xi}}
+\newcommand{\veparam}{\ensuremath{\Theta}}
+\newcommand{\veparams}{\ensuremath{\veparam^*}}
+%\newcommand{\dweifx}{\ensuremath{\bar{\dwei}}}
+\newcommand{\dweifx}{\ensuremath{\dwei}}
+
+
+\newcommand{\mubf}{\ensuremath{\boldsymbol{\mu}}}
+
+\newcommand{\Lag}{\ensuremath{{\mathcal{L}}}}
+
+\newcommand{\upb}{\ensuremath{\mathcal{U}}}
+
+\newcommand{\qsumind}{\ensuremath{\Lambda}}
+
+\newcommand{\undisa}{\ensuremath{\lambda}}
+\newcommand{\undisb}{\ensuremath{\lambda}}
+
+\newcommand{\paramcore}{\ensuremath{\eparam_{\coreset}}}
+\newcommand{\parampl}[1]{\ensuremath{\eparam_{\coreset \; \cup \:
+#1}}}
+
+\newcommand{\messexp}{\ensuremath{\nu}}
+\newcommand{\edvec}{\ensuremath{\Sigma}}
+
+\newcommand{\hparamex}{\ensuremath{\bar{\eparam}}}
+
+\newcommand{\orr}{\operatorname{or}}
+
+\newcommand{\rsumind}{\ensuremath{\Upsilon}}
+\newcommand{\Marg}{\ensuremath{\mathbb{{M}}}}
+\newcommand{\pairpoly}{\ensuremath{\mathfrak{{P}}}}
+
+\newcommand{\cliqueop}{{\operatorname{clique}}}
+\newcommand{\sepop}{{\operatorname{separator}}}
+\newcommand{\sepp}{{\operatorname{sep}}}
+
+\newcommand{\core}{{\operatorname{core}}}
+\newcommand{\full}{{\operatorname{full}}}
+\newcommand{\qdist}{\ensuremath{Q}}
+\newcommand{\qdisttil}{\ensuremath{\wtil{\qdist}}}
+\newcommand{\qdistaux}{\ensuremath{\wtil{\qdist}}}
+
+\newcommand{\qdistvec}{\ensuremath{\mathbf{\vec{\qdist}}}}
+%\newcommand{\qdistvec}{\ensuremath{\mathbf{\qdist}}} 
+
+\newcommand{\qdistvecs}{\ensuremath{\qdistvec^*}}
+
+\newcommand{\qcore}{\ensuremath{\qdist_{\coreset}}}
+\newcommand{\qcorepl}[1]{\ensuremath{\qdist_{\coreset \: \cup \; #1}}}
+
+
+\newcommand{\edset}{\ensuremath{\Delta}}
+\newcommand{\edsettr}{\ensuremath{\wtil{\edset}}}
+
+\newcommand{\resid}{\ensuremath{\mathbf{R}}}
+\newcommand{\residtr}{\ensuremath{\wtil{\mathbf{R}}}}
+\newcommand{\coreset}{\ensuremath{\mathbf{A}}}
+\newcommand{\genset}{\ensuremath{\mathbf{B}}}
+\newcommand{\mybull}{\ensuremath{\bullet}}
+
+\newcommand{\pcore}{\ensuremath{\pdist_{\coreset}}}
+\newcommand{\pcorepl}[1]{\ensuremath{\pdist_{\coreset\: \cup \; #1}}}
+
+
+
+\newcommand{\pcorelabel}{CTD}
+\newcommand{\qcorelabel}{CAD}
+\newcommand{\pcorelabels}{CTD$\;$}
+\newcommand{\qcorelabels}{CAD$\;$}
+
+\newcommand{\pdist}{\ensuremath{P}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% New stuff from August 9, 2001
+
+\newcommand{\binn}{\ensuremath{\{0,1\}^\nodenum}}
+
+\newcommand{\famdist}{\ensuremath{\mathcal{F}}}
+\newcommand{\params}{{\ensuremath{\param^{*}}}}
+
+\newcommand{\eflatman}{\ensuremath{\mathcal{M}_e}}
+\newcommand{\mflatman}{\ensuremath{\mathcal{M}_m}}
+
+
+\newcommand{\setp}{\ensuremath{{\mathcal{R}}}}
+
+
+\newcommand{\Legmap}{\ensuremath{\Lambda}}
+
+
+\newcommand{\modpart}{\ensuremath{F}}
+\newcommand{\Npart}{\ensuremath{\mathcal{F}}}
+
+\newcommand{\Partinf}{\ensuremath{\Part_{\infty}}}
+
+% New stuff from December 28, 2000
+
+\newcommand{\df}{\ensuremath{d}}
+
+\newcommand{\alphnorm}{\ensuremath{\kappa}}
+\newcommand{\mynorm}[1]{\ensuremath{\alphnorm_{#1}}}
+
+%\newcommand{\bethe}{\ensuremath{G}}
+
+\newcommand{\bethe}{\ensuremath{{\mathcal{G}}}}
+\newcommand{\gfunc}{\ensuremath{{\mathcal{G}}}}
+
+\newcommand{\mybethe}{\ensuremath{{\mathcal{G}}}}
+\newcommand{\bigbethe}[2]{\ensuremath{\mybethe_{{#1}; \, {#2}}}}
+\newcommand{\bigbethenon}[2]{\ensuremath{\wtil{\mybethe}_{{#1}; \, {#2}}}}
+
+\newcommand{\step}{\ensuremath{\lambda}}
+\newcommand{\straint}{\ensuremath{{\mathbb{C}}}}
+\newcommand{\estraint}{\ensuremath{{\mathbb{D}}}}
+\newcommand{\kullind}[3]{\ensuremath{D^{#1}({#2}\; \| {#3})}}
+
+\newcommand{\fullcompose}[1]{\ensuremath{(\estimate \circ\project)^{#1}}}
+\newcommand{\compose}{\ensuremath{{\mathcal{Q}}}}
+
+\newcommand{\eparams}{{\ensuremath{\eparam^*}}}
+\newcommand{\meparams}{{\ensuremath{\meparam^*}}}
+\newcommand{\meparamtil}{{\ensuremath{{\wtil{\meparam}}}}}
+
+\newcommand{\vecgamma}{{\ensuremath{\boldsymbol{\gamma}}}}
+\newcommand{\vecgammatil}{{\ensuremath{\boldsymbol{\gammatil}}}}
+
+\newcommand{\vgammainf}{{\ensuremath{\gamma}}}
+\newcommand{\vgammainftil}{{\ensuremath{\gammatil}}}
+
+
+\newcommand{\jind}{\ensuremath{k}}
+
+\newcommand{\Thetmap}{\ensuremath{\Theta}}
+\newcommand{\Pmap}{\ensuremath{\Legmap}}
+
+\newcommand{\breg}[3]{\ensuremath{B_{#1}(#2; \; #3)}}
+\newcommand{\bregsin}[1]{\ensuremath{B_{#1}}}
+
+
+\newcommand{\algnames}{tree-based reparameterization$\,$}
+\newcommand{\algname}{tree-based reparameterization}
+\newcommand{\algshorts}{TRP$\;$} 
+\newcommand{\algshort}{TRP}
+
+\newcommand{\gmps}{GMP$\;$} 
+\newcommand{\gmp}{GMP}
+
+
+% New stuff as of Dec 9, 2000; Version d_merge.tex
+\newcommand{\itind}{\ensuremath{i}}
+\newcommand{\mytind}{\ensuremath{i}}
+\newcommand{\spind}{\ensuremath{l}}
+
+\newcommand{\opteparam}{\ensuremath{\eparam^\dagger}}
+\newcommand{\opttreefun}{\ensuremath{\treefun^\dagger}}
+\newcommand{\eparambar}{\ensuremath{\bar{\eparam}}}
+\newcommand{\eparamtil}{\ensuremath{{\wtil{\eparam}}}}
+\newcommand{\gammatil}{\ensuremath{\wtil{\gamma}}}
+
+
+\newcommand{\sumind}{\ensuremath{\alpha}}
+
+
+\newcommand{\apmarg}[2]{\ensuremath{T^*_{#1; #2}}}
+\newcommand{\trmarg}[2]{\ensuremath{P_{#1; #2}}}
+
+\newcommand{\funa}{\ensuremath{\Lambda}}
+\newcommand{\funb}{\ensuremath{\Psi}}
+
+\newcommand{\etreefun}{\ensuremath{\estim{\treefun}}}
+\newcommand{\treefuns}{\ensuremath{\treefun^*}}
+\newcommand{\family}{\ensuremath{\scr{F}}}
+
+\newcommand{\mymani}{\ensuremath{{\scr{M}}}}
+
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\is}{is}
+\DeclareMathOperator{\markov}{Markov}
+\DeclareMathOperator{\wrt}{w.r.t}
+\DeclareMathOperator{\suchthat}{s.t.}
+
+
+\newcommand{\moeb}{M\"{o}bius $\,$}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%
+\newcommand{\bigM}{\ensuremath{{\bf{A}}}}
+
+
+\newcommand{\xfix}{\ensuremath{\xsca^F}}
+\newcommand{\xsam}{\ensuremath{\xsca^S}}
+\newcommand{\yvecplus}{\ensuremath{\ysca^+}}
+
+\newcommand{\myerr}{\ensuremath{E}}
+
+\newcommand{\myinferr}{\ensuremath{\operatorname{Err}}}
+
+
+\newcommand{\myinfdiff}{\ensuremath{\operatorname{Diff}}}
+
+
+\newcommand{\desc}{\mathbf{d}}
+
+\newcommand{\cliquenum}{\ensuremath{S}}
+\newcommand{\statenum}{{\ensuremath{m}}}
+\newcommand{\nodenum}{\ensuremath{N}}
+\newcommand{\edgenum}{\ensuremath{|\edge|}}
+\newcommand{\treenum}{\ensuremath{L}}
+
+\newcommand{\tind}{\ensuremath{i}}
+\newcommand{\tindset}{\ensuremath{{\mathcal{I}}}}
+
+\newcommand{\boumat}{\ensuremath{{\mathcal{M}}}}
+
+\newcommand{\coeff}[4]{\ensuremath{C\big(#1, \,#2; \; #3, \,#4\big)}}
+\newcommand{\bcoeff}[5]{\ensuremath{D\big (#1, \,#2; \; #3, \,#4; \, #5\big)}}
+
+\newcommand{\usetree}[2]{\ensuremath{\estim{#1}^{#2}}}
+\newcommand{\usecut}[3]{\ensuremath{\wtil{#1}^{#2;#3}}}
+
+\newcommand{\mess}{\ensuremath{M}}
+\newcommand{\messvec}{\ensuremath{\mathbf{M}}}
+
+\newcommand{\lmess}{\ensuremath{\zeta}}
+\newcommand{\lmessvec}{\ensuremath{\boldsymbol{\zeta}}}
+
+\newcommand{\linf}[1]{\ensuremath{\|{#1}\|_\infty}}
+
+\newcommand{\messb}{\ensuremath{\mathbf{M}}}
+%\newcommand{\neigh}{\ensuremath{\mathcal{N}}}
+\newcommand{\neigh}{\ensuremath{\Gamma}}
+
+\newcommand{\cneigh}{\ensuremath{{\mathcal{A}}}}
+\newcommand{\covset}{\ensuremath{{\mathcal{C}}}}
+\newcommand{\compat}{\ensuremath{\psi}}
+\newcommand{\clipot}{\ensuremath{\phi}}
+\newcommand{\clipottil}{\ensuremath{\wtil{\clipot}}}
+\newcommand{\obsfun}{\ensuremath{\varphi}}
+\newcommand{\obsmod}{\ensuremath{\Delta}}
+\newcommand{\prob}{\ensuremath{{\mathbb{P}}}}
+\newcommand{\genprob}{\ensuremath{{\mathcal{P'}}}}
+
+\newcommand{\dualvar}{\ensuremath{\eta}}
+\newcommand{\dualvartil}{\ensuremath{{\wtil{\dualvar}}}}
+\newcommand{\dualvarbar}{\ensuremath{\bar{\dualvar}}}
+
+\newcommand{\dualvarbold}{\ensuremath{{\boldsymbol{\eta}}}}
+\newcommand{\Dual}{\ensuremath{\Psi}}
+\newcommand{\dualvartree}{\ensuremath{\dualvar^{\tree}}}
+
+
+\newcommand{\spprob}{\ensuremath{\mathcal{P}}}
+\newcommand{\mydistset}{\ensuremath{\mathcal{M}}}
+
+\newcommand{\eparam}{\ensuremath{\theta}}
+\newcommand{\Eparam}{\ensuremath{\Theta}}
+\newcommand{\Dome}{\ensuremath{\Theta}}
+%\newcommand{\meparam}{\ensuremath{{{\boldsymbol{\theta}}}}}
+\newcommand{\meparam}{\ensuremath{\eparam}}
+
+\newcommand{\param}{\ensuremath{\gamma}}
+\newcommand{\objec}{\ensuremath{F}}
+\newcommand{\oparg}{\ensuremath{z}}
+\newcommand{\approxnum}{\ensuremath{T}}
+\newcommand{\taypoint}{\ensuremath{\bar{\nu}}}
+
+\newcommand{\mani}{\ensuremath{{\scr{M}}}}
+\newcommand{\statesp}{\ensuremath{{\scr{X}}}}
+\newcommand{\ystatesp}{\ensuremath{{\scr{Y}}}}
+\newcommand{\qstatesp}{\ensuremath{{\scr{\estim{X}}}}}
+
+\newcommand{\statespn}{\ensuremath{\statesp^{\nodenum}}}
+\newcommand{\ystatespn}{\ensuremath{\ystatesp^{\nodenum}}}
+
+\newcommand{\qstatespn}{\ensuremath{\qstatesp^{\nodenum}}}
+
+\newcommand{\tang}{\ensuremath{\scr{T}}}
+\newcommand{\natbas}{\ensuremath{e}}
+\newcommand{\Fisher}{\ensuremath{G}}
+\newcommand{\fisher}{\ensuremath{g}}
+\newcommand{\inter}{\ensuremath{\nu}}
+\newcommand{\Part}{\ensuremath{\Phi}}
+\newcommand{\Dualpart}{\ensuremath{\Psi}}
+
+
+\newcommand{\iterfun}{\ensuremath{U}}
+\newcommand{\biterfun}{\mathbf{U}}
+\newcommand{\project}{\ensuremath{\Pi}}
+\newcommand{\estimate}{{\mathcal{R}}}
+\newcommand{\inject}{{\mathcal{I}}}
+
+\newcommand{\optfun}{\ensuremath{P}}
+\newcommand{\boptfun}{\mathbf{P}}
+
+\newcommand{\iterfunb}{\ensuremath{\mathbf{U}}}
+\newcommand{\biterfunb}{\mathbf{V}}
+
+\newcommand{\iterinfun}{\ensuremath{{U}}}
+\newcommand{\biterinfun}{{V}}
+
+
+\newcommand{\sptree}{{\mathcal{T}}}
+\newcommand{\caltree}{{\mathcal{T}}}
+\newcommand{\cutset}{{\mathcal{C}}}
+\newcommand{\super}{{\mathcal{F}}}
+
+% Eigenvector / eigenvalue related notation
+\newcommand{\eig}[1]{\ensuremath{\lambda_{#1}}}
+\newcommand{\eigmax}{\ensuremath{\eig{\max}}}
+\newcommand{\eigmin}{\ensuremath{\eig{\min}}}
+\newcommand{\eigset}[1]{\ensuremath{\sigma\left({#1}\right)}}
+\newcommand{\eigrad}[1]{\ensuremath{\rho\left({#1}\right)}}
+\newcommand{\eigval}[1]{\ensuremath{\lambda_{#1}}}
+\newcommand{\eigvalset}[1]{\ensuremath{\left\{\eigval{i}\left(#1\right)\right\}}}
+\newcommand{\singval}[1]{\ensuremath{\sigma_{#1}}}
+\newcommand{\singvalset}[1]{\ensuremath{\left\{\singval{i}\left(#1\right)\right\}}}
+\newcommand{\bel}{\ensuremath{B}}
+
+\newcommand{\treefun}{\ensuremath{T}}
+
+%\newcommand{\treefunb}{\ensuremath{{\mathbf{T}}}}
+\newcommand{\treefunb}{\ensuremath{T}}
+
+\newcommand{\treeinfun}{\ensuremath{T}}
+
+
+\newcommand{\exafun}{\ensuremath{P}}
+%\newcommand{\exafunb}{\ensuremath{{{\bf{\exafun}}}}}
+\newcommand{\exafunb}{\ensuremath{\exafun}}
+
+
+\newcommand{\exainfun}{\ensuremath{\exafun}}
+
+
+\newcommand{\indset}{\ensuremath{\scr{I}}}
+
+
+\newcommand{\condprob}[3]{\ensuremath{p_{#1}(#2 | #3)}}
+
+\newcommand{\sinprob}[2]{\ensuremath{p_{#1}(#2)}}
+
+\newcommand{\pcond}[2]{\ensuremath{p(#1 \, | \, #2 )}}
+
+
+
+\newcommand{\xcovar}{\ensuremath{P}}
+\newcommand{\ncovar}{\ensuremath{R}}
+
+
+\newcommand{\asetpl}{\ensuremath{A}}
+
+\newcommand{\aset}{\ensuremath{{\scr{A}}}}
+\newcommand{\bset}{\ensuremath{{\scr{B}}}}
+\newcommand{\cset}{\ensuremath{{{\scr{C}}}}}
+
+\newcommand{\aseto}{\ensuremath{A}}
+\newcommand{\bseto}{\ensuremath{B}}
+\newcommand{\cseto}{\ensuremath{C}}
+
+
+
+
+\newcommand{\iset}{\ensuremath{\scr{I}}}
+\newcommand{\feaset}{\ensuremath{\scr{A}}}
+
+\newcommand{\jset}{\ensuremath{\scr{J}}}
+\newcommand{\sset}{\ensuremath{\scr{S}}}
+
+\newcommand{\csetaux}{\ensuremath{{\mathcal{D}}}}
+
+
+%\newcommand{\cona}{\ensuremath{\mathcal{A}}}
+%\newcommand{\conb}{\ensuremath{\mathcal{B}}}
+
+% Little hacky command for the index of a weight element
+\newcommand{\ind}{\ensuremath{i}}
+
+
+
+% Little hacky command for the weight of a distribution
+\newcommand{\dwei}{\ensuremath{\mu}}
+
+
+\newcommand{\etalg}{ET }
+
+% Symbol for the invariant distribution of a Markov chain
+\newcommand{\ddist}{\pi}
+\newcommand{\agree}{\ensuremath{\mathcal{A}}}
+
+\newcommand{\order}{{\mathcal{O}}}
+\newcommand{\bigs}{\phi}
+
+
+
+
+\newcommand{\clique}{{\mathcal{C}}}
+\newcommand{\cliqueset}{\mathbf{C}}
+
+
+\newcommand{\sep}{{\mathcal{S}}}
+\newcommand{\septwo}{{\mathcal{U}}}
+\newcommand{\sepset}{{\mathbf{S}}}
+\newcommand{\sepsettr}{\mathbf{\wtil{S}}}
+
+\newcommand{\sepsetnew}{\ensuremath{\cliqueset_{\operatorname{sep}}}}
+
+\newcommand{\Cut}[1]{\ensuremath{K_{#1}}}
+\newcommand{\Kut}[1]{\ensuremath{K_{#1}}}
+\newcommand{\Jesst}{\ensuremath{\Jestt}}
+\newcommand{\Jestt}[1]{\ensuremath{\widehat{J}_{#1}}}
+\newcommand{\Jestv}{\ensuremath{\widehat{J}_{\operatorname{orig}}}}
+\newcommand{\estv}{\ensuremath{\estim{\xvec}}}
+\newcommand{\xmap}{\ensuremath{\estv_{\operatorname{MAP}}}}
+\newcommand{\xmaps}{\ensuremath{\estim{x}}}
+
+% Matrices governing convergence of ET iterations
+\newcommand{\convMatE}{\ensuremath{\mathbf{E}}}
+\newcommand{\convMatD}{\ensuremath{\mathbf{D}}}
+\newcommand{\convMatR}{\ensuremath{\mathbf{E}_{r}}}
+
+\newcommand{\Fact}{\ensuremath{\Pi}}
+%\newcommand{\tree}{\ensuremath{\scr{T}}}
+
+\newcommand{\pather}{\ensuremath{\theta}}
+\newcommand{\Path}{\ensuremath{\Theta}}
+
+\newcommand{\ErrCov}{\ensuremath{\estim{P}_{full}}}
+
+
+\newcommand{\inprod}[2]{\ensuremath{\langle #1 , \, #2 \rangle}}
+
+\newcommand{\inprodd}[3]{\ensuremath{\langle #1 , \, #2 \rangle_{#3}}}
+
+\newcommand{\covv}[3]{\ensuremath{\cov_{#3}\{#1, \, #2\}}}
+
+
+\newcommand{\kull}[2]{\ensuremath{D(#1\; \| \; #2)}}
+
+% IEEE Trans. Info. Theory form of Kullback-Leibler
+\newcommand{\kullinf}[2]{\ensuremath{D(#1\, \| \, #2)}}
+
+
+\newcommand{\normspec}[2]{\ensuremath{\|#1\|_{#2}}}
+
+
+\newcommand{\joint}{{\cal A}}
+
+\newcommand{\jsdata}{\ensuremath{{y}}}
+\newcommand{\jsmean}{\ensuremath{{c}}}
+\newcommand{\jsnoise}{\ensuremath{{v}}}
+
+\newcommand{\wave}{\ensuremath{c}}
+\newcommand{\wavevec}{\ensuremath{{\bf{c}}}}
+\newcommand{\bigpro}{\ensuremath{\mathcal{I}}}
+
+\newcommand{\ones}{\ensuremath{\mathbf{1}}}
+\newcommand{\zeroes}{\ensuremath{\mathbf{0}}}
+\newcommand{\laplacer}{\ensuremath{\mathcal{L}}}
+
+
+\newcommand{\chooser}[2]{\ensuremath{\big(\frac{#1}{#2}\big)}}
+
+
+% graph commands
+
+%\newcommand{\subgraph}{\ensuremath{\mathcal{H}}}
+%\newcommand{\vertex}{\ensuremath{\mathcal{V}}}
+%\newcommand{\edge}{\ensuremath{\mathcal{E}}}
+%\newcommand{\edgesub}{\ensuremath{{F}}}
+
+
+%\newcommand{\graph}{\ensuremath{\mathcal{G}}}
+\newcommand{\graph}{\ensuremath{G}}
+\newcommand{\subgraph}{\ensuremath{H}}
+\newcommand{\vertex}{\ensuremath{V}}
+\newcommand{\edge}{\ensuremath{E}}
+\newcommand{\edgesub}{\ensuremath{{F}}}
+
+
+%\newcommand{\pathsym}{\ensuremath{\mathcal{P}}}
+\newcommand{\pathsym}{\ensuremath{P}}
+
+\newcommand{\graphtriang}{\ensuremath{\wtil{\graph}}}
+\newcommand{\graphtr}{\ensuremath{\wtil{\graph}}}
+\newcommand{\cliquesettr}{\ensuremath{\mathbf{\wtil{C}}}}
+
+\newcommand{\ranker}{\ensuremath{r}}
+\newcommand{\connect}{\ensuremath{c}}
+\newcommand{\nuller}{\ensuremath{n}}
+\newcommand{\numvertex}{\ensuremath{v}}
+
+
+
+
+\newcommand{\treecal}{\ensuremath{\mathcal{T}}}
+
+
+% Graph weighting matrix
+\newcommand{\weight}{\ensuremath{\omega}}
+\newcommand{\weights}{\ensuremath{w}}
+
+\newcommand{\nobs}{\ensuremath{h}}
+
+\newcommand{\normer}{\ensuremath{Z}}
+
+\newcommand{\bk}{\ensuremath{\backslash}}
+\newcommand{\kcon}{\ensuremath{K}}
+
+%  Dyadic and Quad. Tree commands
+\newcommand{\pare}{\ensuremath{\bar{\gamma}}}
+\newcommand{\childa}[1]{\ensuremath{\alpha_{#1}}}
+\newcommand{\ca}{\ensuremath{\bar{\alpha_1}}}
+\newcommand{\cb}{\ensuremath{\bar{\alpha_2}}}
+%\newcommand{\cc}{\ensuremath{\bar{\alpha_3}}}
+\newcommand{\cd}{\ensuremath{\bar{\alpha_4}}}
+\newcommand{\ancest}[2]{\ensuremath{{#1} \wedge {#2}}}
+\newcommand{\childset}{\ensuremath{\operatorname{Ch}}}
+
+\newcommand{\pars}{\ensuremath{\operatorname{pa}}}
+\newcommand{\edif}{\ensuremath{\Delta}}
+
+\newcommand{\parentt}{\ensuremath{\operatorname{parent}}}
+\newcommand{\iss}{\ensuremath{\operatorname{is}}}
+\newcommand{\of}{\ensuremath{\operatorname{of}}}
+
+\newcommand{\future}[1]{\ensuremath{\yvec^{+}_{#1}}}
+\newcommand{\past}[1]{\ensuremath{\yvec^{-}_{#1}}}
+\newcommand{\lamplus}[2]{\ensuremath{\lambda^{+}_{#1}(#2({#1}))}}
+\newcommand{\lamhatplus}[3]{\ensuremath{\widehat{\lambda}^{+}_{#1}(#2({#3}))}}
+\newcommand{\aplus}[2]{\ensuremath{{#1}^{+}_{#2}}}
+\newcommand{\aplushat}[2]{\ensuremath{\widehat{#1}^{+}_{#2}}}
+
+\newcommand{\clamplus}{compplus}
+\newcommand{\clamhat}{comphat}
+
+
+
+\newcommand{\data}{\ensuremath{\yvec}}
+\newcommand{\probd}[2]{\ensuremath{p(#1 \, | \, #2 )}}
+
+
+
+\newcommand{\state}{\ensuremath{x}}
+\newcommand{\obs}{\ensuremath{y}}
+
+
+
+\newcommand{\inv}[1]{\ensuremath{#1^{-1}}}
+\newcommand{\kry}{\ensuremath{\mathcal{K}}}
+
+% Self similarity parameter
+\newcommand{\selfsim}{\ensuremath{\lambda}}
+% Tail parameter
+\newcommand{\logexp}{\ensuremath{\beta}}
+
+% Logs etc.
+\newcommand{\logtwo}{\ensuremath{\log_2}}
+
+\newcommand{\emax}{\lambda_{max}}
+\newcommand{\emin}{\lambda_{min}}
+\newcommand{\earb}[1]{\lambda_{#1}}
+
+% Limits with stackrel
+\newcommand{\convp}{\ensuremath{\stackrel}{\mathcal{P}}{\longrightarrow}}
+\newcommand{\convd}{\ensuremath{\stackrel}{\mathitalic{d}}{\longrightarrow}}
+
+\newcommand{\pderiv}[2]{\ensuremath{\frac{\partial{#1}}{\partial{#2}}}}
+\newcommand{\pderivtwo}[3]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}
+\, \partial{#3}}}}
+\newcommand{\pderivtwod}[2]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}^2}}}
+
+\newcommand{\pdif}[2]{\ensuremath{\frac{\partial{#1}}{\partial{#2}}}}
+\newcommand{\pdifftwo}[3]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}
+\, \partial{#3}}}}
+\newcommand{\pdiff}[2]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}^2}}}
+\newcommand{\pdifn}[3]{\ensuremath{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}}
+
+
+\newcommand{\Fok}{\ensuremath{\mathcal{L}}}
+
+\newcommand{\Ra}{\ensuremath{\mathit{Ra}}}
+
+
+\newcommand{\unhyp}{\ensuremath{(0,1)^{\df(\meparam)}}}
+\newcommand{\unhypthesis}{\ensuremath{(0,1)^{\df(\eparam)}}}
+
+% Expected Value section
+% use this command if no amsfonts
+%\newcommand{\Exs}{\mathsf{I\!E}}
+% use this command with amsfonts
+\newcommand{\Exs}{\ensuremath{{\mathbb{E}}}}
+
+% format shortcuts
+\newcommand{\beq}{\begin{quotation}}
+\newcommand{\enq}{\end{quotation}}
+
+\newcommand{\mcite}[2]{\citetext{#1  \citealp{#2}}}
+\newcommand{\incite}[2]{\citealp{#1,\citetext{#2}}}
+
+
+\newcommand{\estart}{\begin{equation}}
+\newcommand{\eend}{\end{equation}}
+
+% example of new command with arguments
+\newcommand{\pnorm}[2]{\|\, #1 \,\|_{#2}}
+% to use type \pnorm{$x$}{2} for instance
+
+% graphics commands: faster 
+% #1=scaling ratio; #2 is file_name
+%%\newcommand{\fastgraph}[2]{\includegraphics[keepaspectratio,scale=#1]{#2}}
+\newcommand{\fastgraph}[2]{\includegraphics[scale=#1]{#2}}
+
+\newcommand{\widgraph}[2]{\includegraphics[keepaspectratio,width=#1]{#2}}
+%%\newcommand{\widgraph}[2]{\includegraphics[width=#1]{#2}}
+
+\newcommand{\epsgraph}[2]{\epsfig{file=#2,width=#1}}
+
+\newcommand{\scr}[1]{\ensuremath{\mathcal{#1}}}
+
+\newcommand{\intzinf}{\int_{0}^{\infty}}
+\newcommand{\edist}{\ensuremath{\overset{d}{=}}}
+\newcommand{\erate}{\ensuremath{\overset{\cdot}{=}}}
+\newcommand{\defntr}{\ensuremath{\triangleq}}
+\newcommand{\defn}{\ensuremath{:  =}}
+\newcommand{\rdefn}{\ensuremath{= :}}
+
+%\newcommand{\degree}{\ensuremath{d}}
+\newcommand{\vertexsub}{\ensuremath{S}}
+
+\newcommand{\ham}{\ensuremath{d_H}}
+\newcommand{\app}{\ensuremath{\operatorname{APP}}}
+
+\newcommand{\xvec}{\ensuremath{{{\mathbf{x}}}}}
+\newcommand{\Xvec}{\ensuremath{{{\mathbf{X}}}}}
+\newcommand{\qxvec}{\ensuremath{{{\mathbf{\estim{x}}}}}}
+%\newcommand{\xvec}{x}
+\newcommand{\bigX}{\ensuremath{{\mathbf{X}}}}
+\newcommand{\bigY}{\ensuremath{{\mathbf{Y}}}}
+
+\newcommand{\empav}[1]{\bar{#1}}
+
+\newcommand{\xs}{\ensuremath{x^*}}
+
+\newcommand{\xvecc}{\ensuremath{{\bf{x}}}}
+%\newcommand{\xvecc}{\ensuremath{x}}
+
+\newcommand{\gvec}{{\bf{u}}}
+\newcommand{\mvec}{\ensuremath{Z}}
+\newcommand{\yvec}{{\bf{y}}}
+\newcommand{\uvec}{{\bf{u}}}
+\newcommand{\zvec}{{\bf{z}}}
+\newcommand{\wvec}{{\bf{w}}}
+\newcommand{\vvec}{{\bf{v}}}
+
+\newcommand{\Yvec}{{\bf{Y}}}
+\newcommand{\Uvec}{{\bf{U}}}
+\newcommand{\Zvec}{{\bf{Z}}}
+\newcommand{\Wvec}{{\bf{W}}}
+\newcommand{\Vvec}{{\bf{V}}}
+
+
+\newcommand{\xsca}{{{x}}}
+\newcommand{\ysca}{{{y}}}
+\newcommand{\zsca}{{{z}}}
+\newcommand{\wsca}{{{w}}}
+\newcommand{\usca}{{{u}}}
+\newcommand{\vsca}{{{v}}}
+
+\newcommand{\Xsca}{{{X}}}
+\newcommand{\Ysca}{{{Y}}}
+\newcommand{\Zsca}{{{Z}}}
+\newcommand{\Wsca}{{{W}}}
+\newcommand{\Usca}{{{U}}}
+\newcommand{\Vsca}{{{V}}}
+
+\newcommand{\vect}[1]{{\bf{#1}}}
+
+
+\newcommand{\ucovar}{\ensuremath{J}}
+
+\newcommand{\gsca}{\ensuremath{u}}
+\newcommand{\msca}{\ensuremath{z}}
+\newcommand{\ssca}{\ensuremath{z}}
+
+
+\newcommand{\psifam}{\ensuremath{\left\{2^m}
+\psi^{m}_n(2^m t - n)\right\}}
+\newcommand{\xcoeff}{\ensuremath{x^{m}_n}}
+\newcommand{\psif}{\ensuremath{\psi(2^m t - n)}}
+
+\newcommand{\updmn}[1]{\ensuremath{{#1}^{m}_{n}}}
+\newcommand{\updn}[3]{\ensuremath{{#1}^{#2}_{#3}}}
+
+\newcommand{\noise}{\ensuremath{w}}
+\newcommand{\vnoise}{\ensuremath{W}}
+
+\newcommand{\noiseb}{\ensuremath{\zeta}}
+\newcommand{\noisec}{\ensuremath{v}}
+
+\newcommand{\amat}{\ensuremath{A}}
+\newcommand{\bmat}{\ensuremath{B}}
+\newcommand{\cmat}{\ensuremath{C}}
+\newcommand{\dmat}{\ensuremath{D}}
+
+\newcommand{\wavdet}[2]{\ensuremath{x^{#1}_{#2}}}
+
+% Short commands for centering; itemizing etc.
+
+\newcommand{\bec}{\begin{center}}
+\newcommand{\enc}{\end{center}}
+
+\newcommand{\beit}{\begin{itemize}}
+\newcommand{\enit}{\end{itemize}}
+
+\newcommand{\been}{\begin{enumerate}}
+\newcommand{\enen}{\end{enumerate}}
+
+
+% Slide commands for seminar class
+\newcommand{\comsl}{\begin{slide}}
+\newcommand{\comspor}{\begin{slide*}}
+
+\newcommand{\comsld}[2]{\begin{slide}[#1,#2]}
+\newcommand{\comspord}[2]{\begin{slide*}[#1,#2]}
+
+\newcommand{\mendsl}{\end{slide}}
+\newcommand{\mendspo}{\end{slide*}}
+
+
+\newcommand{\atgvec}{\ensuremath{\msca  \gvec}}
+\newcommand{\atgsca}{\ensuremath{\msca  \gsca}}
+
+\newcommand{\satgvec}{\ensuremath{\sqrt{\ssca}  \gvec}}
+\newcommand{\satgsca}{\ensuremath{\sqrt{\ssca}  \gsca}}
+
+\newcommand{\repvec}{\mbox{$\xvec \, \edist \, \atgvec$}}
+\newcommand{\repsca}{\mbox{$\xsca \, \edist \, \atgsca$}}
+
+\newcommand{\srepvec}{\mbox{$\xvec \, \edist \, \satgvec$}}
+\newcommand{\srepsca}{\mbox{$\xsca \, \edist \, \satgsca$}}
+
+
+\newcommand{\normal}[1]{\ensuremath{\mathcal{N}(0,#1)}}
+\newcommand{\normall}[2]{\ensuremath{\mathcal{N}(#1,#2)}}
+
+% Define estimates of quantities
+\newcommand{\estim}[1]{\ensuremath{\widehat{#1}}}
+\newcommand{\bls}[1]{\ensuremath{\widehat{#1}_{BLS}}}
+\newcommand{\map}[1]{\ensuremath{\widehat{#1}_{MAP}}}
+\newcommand{\wtil}[1]{\ensuremath{\widetilde{#1}}}
+
+\newcommand{\mapfunc}{\ensuremath{f}}
+
+\newcommand{\condv}{r}
+\newcommand{\real}{\ensuremath{{\mathbb{R}}}}
+\newcommand{\realp}{\ensuremath{{\mathbb{R^{+}}}}}
+\newcommand{\posint}{\ensuremath{{\mathbb{N}}}}
+\newcommand{\allint}{\ensuremath{{\mathbb{Z}}}}
+% Define the (Gibbs) partition function
+\newcommand{\parti}{{\mathbf Z}}
+
+% Define integrals over various ranges
+\newcommand{\intoi}{\ensuremath{\int_0^{\infty}}}
+\newcommand{\intii}{\ensuremath{\int_{-\infty}^{\infty}}}
+\newcommand{\intar}[2]{\ensuremath{\int_{#1}^{#2}}}
+
+\newcommand{\lincon}{\ensuremath{{\mathcal{L}}}}
+
+% Standard forms for certain densities
+\newcommand{\student}[3]{\ensuremath{ (1+ \frac{#1^2}{2 #2^2})^{-#3}}}
+\newcommand{\gamd}[1]{\ensuremath{Z({#1})}}
+\newcommand{\symgam}[3]{\ensuremath{\left({#3}/({#3} + {#1}^2)\right)^{#2}}}
+\newcommand{\gausss}[2]{\ensuremath{\frac{1}{\sqrt{2\pi} #2} \exp{(-\frac{#1^2}{2 #2^2})}}}
+\newcommand{\gaussm}[3]{\ensuremath{\frac{1}{\sqrt{2\pi}
+|#2|^{\frac{#3}{2}}} \exp{\big(-\frac{1}{2} #1'#2^{-1} #1 \big)}}}
+
+%%% Partial derivatives
+\newcommand{\dif}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\diff}[2]{\ensuremath{\frac{\partial^2 #1}{\partial #2^2}}}
+\newcommand{\dift}[3]{\ensuremath{\frac{\partial^2 #1}{\partial #2 \partial #3}}}
+
+%% Ordinaray derivatives
+\newcommand{\odif}[2]{\ensuremath{\frac{d #1}{d #2}}}
+\newcommand{\odiff}[2]{\ensuremath{\frac{d^2 #1}{d #2^2}}}
+\newcommand{\odift}[3]{\ensuremath{\frac{d #1}{d #2 d #3}}}
+
+\newcommand{\hself}{H-ss}
+\newcommand{\asym}{\beta}
+\newcommand{\pcon}[2]{p(#1 | #2)}
+\newcommand{\scaleform}[3]{\frac{1}{#2} {#3}(\frac{#1}{#2})}
+
+
+\newcommand{\scale}{\ensuremath{\lambda}}
+\newcommand{\tail}{\ensuremath{\alpha}}
+
+% Characteristic functions and Laplace transforms
+\newcommand{\charfunc}[2]{\ensuremath{\phi_{#1}{(#2)}}}
+% This second command is for putting the function w/o argument
+\newcommand{\charf}[1]{\ensuremath{\phi_{#1}}}
+
+\newcommand{\laptran}[2]{\ensuremath{\psi_{#1}{(#2)}}}
+
+% Gaussian density function
+\newcommand{\gaussd}[2]{\ensuremath{\frac{1}{\sqrt{2 \pi #1}}
+\exp{(-\frac{#2^2}{2 #1})}}}
+
+
+
+
+
+% Fiddly little text commands
+\newcommand{\half}{\ensuremath{^{\frac{1}{2}}}}
+\newcommand{\wien}{\ensuremath{w}}
+\newcommand{\stat}{\ensuremath{x}}
+\newcommand{\ustat}{\ensuremath{u}}
+
+\newcommand{\ssp}{\ensuremath{\; \:}}
+
+\newcommand{\iden}[1]{\ensuremath{I_{#1}}}
+\newcommand{\zeros}[1]{\ensuremath{0_{#1}}}
+
+
+% Funny accented words
+\newcommand{\ito}{{I}t\^{o}\hspace*{3pt}}
+\newcommand{\csis}{{C}sisz\'{a}r\hspace*{3pt}}
+\newcommand{\csiss}{{C}sisz\'{a}r}
+
+
+
+
+\DeclareMathOperator{\modd}{mod}
+\DeclareMathOperator{\probab}{Pr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\stable}{stable}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\abs}{abs}
+\DeclareMathOperator{\floor}{floor}
+\DeclareMathOperator{\spanner}{span}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\child}{child}
+\DeclareMathOperator{\parent}{parent}
+\DeclareMathOperator{\tree}{tree}
+\DeclareMathOperator{\loopy}{loop}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\for}{for}
+\DeclareMathOperator{\all}{all}
+\DeclareMathOperator{\some}{some}
+\DeclareMathOperator{\cum}{cum}
+\DeclareMathOperator{\toeplitz}{toeplitz}
+
+
+

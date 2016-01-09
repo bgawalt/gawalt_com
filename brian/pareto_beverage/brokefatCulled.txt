@@ -1,0 +1,78 @@
+Arbor Mist White Zinfandel Exotic Fruit, 41.8, 6.57
+Bacardi Silver 03, 48, 7.5
+Bacardi Silver Mojito, 45.8, 7.5
+Bacardi 151 rum, 19.4, 2.7
+Baily's Irish Cream, 67.8, 11.82
+Becks Premier Light, 27.8, 10.86
+Blue Moon Belgian White, 30.6, 5.05
+Bud American Ale, 34.3, 5.5
+Bud Ice, 22.4, 4.52
+Bud Light, 26.2, 3.57
+Bud Light Lime, 27.6, 5.95
+Budweiser, 29, 3
+Budweiser Select, 23, 4.65
+Busch, 26.3, 2.72
+Captain Morgan Original Spiced Rum, 20.6, 5.07
+Colt 45 Malt Liquor, 28.2, 2.45
+Coors Light, 24.3, 3.61
+Corona Extra, 32.2, 6.34
+Corona Light, 24.2, 6.48
+Everclear, 18.9, 1.99
+Fat Tire, 30.8, 6.21
+Fosters, 29, 5
+George Killians Irish Red, 32.5, 5.01
+Goldschlager, 26.3, 6.25
+Guinness Draught, 29.3, 7.31
+Heineken, 30, 5.41
+Heineken Light, 28.3, 7.73
+Hornsbys Hard Apple Cider, 36.4, 4.54
+Jagermeister, 35.3, 5.4
+Kahlua, 54.6, 8.27
+Keystone Ice, 24.1, 2.52
+Keystone Light, 25.2, 3.13
+Keystone Premium, 25.1, 2.91
+King Cobra, 22.3, 2.19
+Kirin Ichiban, 29.4, 5.83
+Mad Dog 2020 Grape Wine, 26.7, 1.96
+MGD 64, 22.9, 7.44
+Michelob Ultra, 22.6, 4.96
+Michelob Ultra Amber, 23.8, 4.16
+Mickeys Fine Malt Liquor, 28, 2.67
+Miller Genuine Draft, 30.4, 3.19
+Miller High Life, 30.4, 3.32
+Miller Icehouse 50, 26.4, 2.98
+Miller Lite, 22.9, 3.57
+Molson Canadian, 27.2, 4.58
+Natural Ice, 22, 2.19
+Natural Light, 22.6, 3.07
+ODouls, 162.5, 52.03
+Olde English 800, 27.1, 2.53
+Olde English High Gravity 800, 27.5, 1.87
+Pabst Blue Ribbon, 30.6, 2.5
+Parrot Bay Caribbean Coconut Rum, 34.8, 6.8
+Patrn Silver Tequila, 19.9, 11.83
+Pilsner Urquell, 35.5, 6.62
+Popov Vodka 100 proof, 19.4, 2.13
+Pyramid Hefeweizen, 32.7, 4.8
+Red Dog, 29.4, 2.98
+Red Hook ESB, 31, 5.41
+Red Hook IPA, 28.9, 5.2
+Rolling Rock Premium Beer, 26.7, 5.09
+Rum and Diet Coke, 20.6, 8.91
+Sam Adams Boston Lager, 34.7, 5.52
+Sam Adams Cream Stout, 38.8, 5.52
+Sam Adams Light, 29.4, 6.68
+Sapporo Premium, 28.6, 5.09
+Schlitz Malt Liquor, 29.8, 2.54
+Sierra Nevada Pale Ale, 31.3, 5.2
+Sierra Nevada Summerfest Beer, 31.6, 5.83
+Sierra Nevada Wheat Beer, 34.8, 6.62
+Smirnoff Vodka Blue Label 100 Proof, 19.4, 3.78
+Smirnoff Vodka Red Label 80 Proof, 19.4, 3.84
+Smirnoff Vodka Silver Label 90 Proof, 19.5, 3.92
+Sparks, 42.8, 4.66
+Sparks Light, 22.2, 6.84
+Steel Reserve, 27.4, 2.3
+Tanqueray London Dry Gin, 19.6, 4.25
+Vodka and Red Bull Sugar Free, 20.2, 5.29
+Vodka and Rockstar Diet, 20.2, 4.89

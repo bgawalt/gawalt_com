@@ -1,0 +1,90 @@
+
+
+
+<html>
+
+<style>
+body { font-family: Georgia, 'Times New Roman', serif;
+	font-size:15;
+	background-color: rgb(255, 255, 255);
+	width: 700px;}
+	
+	
+text{
+	float: left;
+	clear: left;
+	width: 600px;
+	background-color: rgb(255, 255, 255);
+	margin-bottom: 10px;
+	margin-left: 30px;
+}textl{
+	float: left;
+	clear: left;
+	width: 600px;
+	background-color: rgb(255, 255, 255);
+	margin-left: 30px;
+}
+
+h3{ font-style: bold;
+	font-size:18;
+	margin-bottom: 5px;
+}
+tt{ font-family: Courier;
+	font-size: 14;
+}
+ibox{
+	float:right;
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-bottom: 1px;
+}
+</style>
+
+<title>Discovering Word Associations in News Media via Feature Selection and Sparse Classification</title>
+<body>
+<text><H1>Discovering Word Associations in News Media via Feature Selection and Sparse Classification</H1></text>
+
+<text>We were fortunate to have our work accepted into the proceedings of the <a href="http://riemann.ist.psu.edu/mir2010/">11th ACM SIGMM International Conference on Multimedia Information Retrieval</a>.  Here you may find a gallery of material complementary to this work.</text>
+
+<text>
+<h3>The paper</h3>
+You can download a PDF copy of the paper <a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/GawaltJiaMiratrix10.pdf">here</a>.
+</text>
+<text>
+<h3>The presentation</h3>
+You can download a PDF copy of the slides presented at MIR 2010 
+<a 
+href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/GawaltJiaMiratrixSlides.pdf">here</a>.</text>
+
+<textl><h3>The data</h3>
+<ul>
+<li><b><a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/NYTWData.txt">NYTWData.txt</a></b>, [44.6 MB]: A tab-delimited text file encoding the appearance of words across paragraphs.  Each paragraph-word pair extant in the data receives a line of text for which Column 1 provides the paragraph ID, Column 2 provides the word ID, and Column 3 provides the number of times the word appeared in the paragraph.</li>
+<li><b><a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/NYTWDict.txt">NYTWDict.txt</a></b>, [1.1 MB]: A tab-delimited text file with each line providing a word identification number (as used in the matrix above) and it's associated plaintext word.</li>
+<li><b><a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/NYTWStops.txt">NYTWStops.txt</a></b>, [4 KB]: A text file listing words and word IDs deemed <i>a priori</i> uninteresting; these were dropped from the above matrix when conducting our imaging experiments.</li></ul></textl>
+<textl><h3>The experiments</h3><ul>
+<li><b><a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/NYTWQueries.txt">NYTWQueries.txt</a></b>, [4 KB]: A text file listing the 47 words and their associated IDs used as labels for our imaging experiments.</li>
+<li><b><a href="http://www.eecs.berkeley.edu/~gawalt/MIR2010/NYTWSplits.txt">NYTWSplits.zip</a></b>, [11.3 MB]: A ZIP file containing 47 text files, each corresponding to the .  Each line of each text file provides each paragraph ID with a designation indicating training set membership (a value of 0) or test set membership (a value of 1) for the particular query.</li>
+</ul></textl>
+
+<text><h3>The results</h3>
+A PDF report documenting the words selected by each feature selection method across each query will be available for download shortly.</text>
+
+<textl>
+<h3>The authors</h3>
+<ul>
+<li><a href="http://www.eecs.berkeley.edu/~gawalt/">Brian Gawalt</a>, &nbsp;&nbsp; &nbsp;<tt>gawalt ~a.t.~ eecs.berkeley.edu</tt></li>
+<li><a href="http://www.stat.berkeley.edu/~jzjia">Jinzhu Jia</a>,&nbsp;&nbsp;&nbsp; <tt>jzjia ~a.t.~ stat.berkeley.edu</tt></li>
+<li>Luke Miratrix,&nbsp;&nbsp;&nbsp; <tt>luke ~a.t.~ stat.berkeley.edu</tt></li>
+<li><a href="http://www.eecs.berkeley.edu/~elghaoui">Laurent El Ghaoui</a>, &nbsp;&nbsp;&nbsp;<tt>elghaoui ~a.t.~ eecs.berkeley.edu</tt></li>
+<li><a href="http://www.stat.berkeley.edu/~binyu/">Bin Yu</a>,&nbsp;&nbsp; &nbsp;<tt>binyu ~a.t.~ stat.berkeley.edu</tt></li>
+<li><a href="http://userwww.sfsu.edu/~sclavier/">Sophie Clavier</a>, &nbsp;&nbsp;&nbsp;<tt>sclavier ~a.t.~ sfsu.edu</tt></li>
+</ul>
+This work was conducted as part of the <a href="http://www.eecs.berkeley.edu/~elghaoui/StatNews/">StatNews Project</a>.
+</textl>
+
+<text>&nbsp;</text>
+<text>&nbsp;</text>
+</text>
+</body>
+</html>
