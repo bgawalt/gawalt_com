@@ -1,0 +1,31 @@
+Level 0
+
+MAGE HAND: VS
+1 min duration
+Hand floats around w/i 30 feet
+10 lb carry limit
+
+VICIOUS MOCKERY: V
+Single creature makes wisdom saving throw
+Failure = 1d4 + disadvantage on next attack
+
+
+Level 1
+BANE: VSM
+1 min concentration
+3 line-of-sight characters make Charisma saving throws.
+Failure = all attack or saving rolls subtract 1d4.
+
+CURE WOUNDS: VS
+Touch a creature, they gain 1d8+spell modifier HP
+
+DETECT MAGIC: VS
+Sense any magic w/i 30 feet, and its school.
+Passes through 1 foot stone, 3 feet wood/dirt,
+1 inch metal, no lead
+
+HEALING WORD: V
+Bonus action
+Creature in sight gains 1d4+spell modifier HP
+
+
