@@ -1,0 +1,49 @@
+
+body {
+    width: 100%;
+    max-width: 660px;
+    margin: auto;
+    background-color: #b8dcff;
+    color: #998877;
+    font-size: 36pt;
+}
+
+table {
+    margin: auto
+}
+
+#controlpanel{
+    margin-top: 30px;
+}
+
+.control {
+    width: 40%;
+    font-size: 36pt;
+}
+
+#reset {
+    text-align: left;
+}
+
+#count {
+    text-align: right;
+}
+
+.gameboard {
+    background-color: #b8dcff;
+    width: 95%;
+    aspect-ratio: 1.0;
+    font-style: bold;
+}
+
+.gamepanel {
+    max-width: 200px;
+    aspect-ratio: 1.0;     
+    background-color: #222222;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#win_msg {
+    text-align: center;
+}
